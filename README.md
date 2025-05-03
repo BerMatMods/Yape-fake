@@ -3,92 +3,177 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Amor para Briyidth</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Sacramento&display=swap" rel="stylesheet">
+  <title>⚡BerMatModZ🔥 - Página Oficial</title>
+  <!-- Fuentes Elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Iconos de FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('https://www.transparenttextures.com/patterns/just-blue.png') repeat;
-      font-family: 'Sacramento', sans-serif;
-      color: #fff;
+      background: linear-gradient(to bottom, #121212, #333);
+      font-family: 'Poppins', sans-serif;
+      color: #00ffcc;
       text-align: center;
-      background-color: #ffccff;
+      overflow-x: hidden;
     }
 
-    h1, h2 {
-      font-family: 'Dancing Script', cursive;
-      color: #ff1493;
-      text-shadow: 0 0 10px rgba(255, 105, 180, 0.7), 0 0 20px rgba(255, 105, 180, 0.6);
+    /* Banner con Animación */
+    .banner {
+      font-size: 4em;
+      margin-top: 40px;
+      color: #ffde59;
+      text-shadow: 0 0 30px #00ffcc, 0 0 10px #ffde59;
+      animation: moverBanner 10s linear infinite;
     }
 
-    h1 {
-      font-size: 3.5em;
-      margin-top: 20px;
+    @keyframes moverBanner {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(20px); }
+      100% { transform: translateY(0px); }
     }
 
-    h2 {
-      font-size: 2.5em;
-      margin-top: 30px;
+    /* Máscara de Anonymous con Animación */
+    .anon-mask {
+      width: 200px;
+      margin: 50px auto;
+      animation: floatMask 6s ease-in-out infinite;
     }
 
-    .flower {
-      font-size: 1.2em;
-      color: #ff69b4;
-      margin: 20px 0;
-      animation: bloom 5s infinite alternate;
+    @keyframes floatMask {
+      0% { transform: translateY(0); opacity: 0.8; }
+      50% { transform: translateY(20px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.8; }
     }
 
-    @keyframes bloom {
-      0% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.1); opacity: 1; }
-      100% { transform: scale(1); opacity: 0.8; }
-    }
-
-    .message {
-      font-size: 1.5em;
-      font-family: 'Sacramento', sans-serif;
-      color: #fff;
-      line-height: 1.8;
-      margin-top: 20px;
-      background: rgba(255, 105, 180, 0.8);
-      padding: 20px;
+    /* Contenido Principal */
+    .content {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.6);
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
     }
 
-    .heart {
-      font-size: 3em;
-      color: #ff1493;
-      text-shadow: 0 0 10px rgba(255, 105, 180, 0.7), 0 0 20px rgba(255, 105, 180, 0.6);
-      margin-top: 20px;
+    .content h2 {
+      font-family: 'Roboto', sans-serif;
+      color: #ffffff;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #ffde59;
+    }
+
+    .content p {
+      font-size: 1.2em;
+      color: #e0e0e0;
+    }
+
+    .content ul {
+      list-style: none;
+      padding-left: 0;
+      color: #ffffff;
+    }
+
+    .content ul li {
+      margin: 10px 0;
+    }
+
+    .content .image-container {
+      margin-top: 40px;
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+      border: 4px solid #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    .content .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Redes Sociales */
+    .social-links {
+      margin-top: 40px;
+    }
+
+    .social-links a {
+      color: #ffffff;
+      font-size: 2.5em;
+      margin: 0 20px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffde59;
     }
 
     footer {
-      margin-top: 50px;
-      font-size: 1.2em;
-      color: #ff1493;
-      text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+      margin-top: 60px;
+      color: #999;
+      font-size: 1em;
     }
   </style>
 </head>
 <body>
 
-  <h1>Para mi Reina Briyidth Jhorgina</h1>
+  <!-- Banner con tu Nombre -->
+  <div class="banner">⚡BerMatModZ🔥</div>
 
-  <div class="flower">🌸🌷🌸</div>
-
-  <div class="message">
-    <p>Mi amor, cada día contigo es un regalo invaluable. 💖</p>
-    <p>Eres la flor más hermosa en mi vida, la razón por la cual mi corazón late con fuerza. 🌹</p>
-    <p>No hay palabras suficientes para describir todo lo que significas para mí, pero intentaré:</p>
-    <p><strong>Te amo muchísimo, mi reina. Gracias por ser mi compañera, mi apoyo y la luz de mi vida. 💕</strong></p>
+  <!-- Máscara de Anonymous -->
+  <div class="anon-mask">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Guy_Fawkes_mask.svg/480px-Guy_Fawkes_mask.svg.png" alt="Anonymous Mask">
   </div>
 
-  <div class="heart">❤️</div>
+  <!-- Contenido Principal -->
+  <div class="content">
+    <!-- Imagen Personal -->
+    <div class="image-container">
+      <img src="URL_DE_TU_IMAGEN_AQUI" alt="Tu Imagen">
+    </div>
 
+    <h2>Bienvenido a la página oficial de BerMatModZ</h2>
+    <p>Soy programador, hacker ético y creador de bots con inteligencia artificial. ¡Transformo la tecnología!</p>
+    <p>Originario de <strong>Andahuaylas</strong>, con un compromiso para cambiar el futuro.</p>
+    <p>Novia: <strong>Briyidth Jhorgina</strong> 💖</p>
+
+    <h2>Proyectos:</h2>
+    <ul>
+      <li>⚡ BerMat-Bot MD🔥 (WhatsApp Bot con IA)</li>
+      <li>FAMA - Fuerza Anónima de Mentes Avanzadas</li>
+      <li>Simulador de Hack con efectos de voz y animaciones</li>
+    </ul>
+
+    <p>"El conocimiento es libre. Somos Anonymous. Somos BerMatModZ. No perdonamos, no olvidamos. ¡Prepárate!"</p>
+
+    <!-- Redes Sociales -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/AnthZz.Berrocal" target="_blank">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/AnthZz.Berrocal" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://open.spotify.com/user/AnthZz.Berrocal" target="_blank">
+        <i class="fab fa-spotify"></i>
+      </a>
+      <a href="https://www.youtube.com/c/AnthZzBerrocal" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://wa.me/+51900233784" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Pie de Página -->
   <footer>
-    <p>Con amor, tu BerMatModZ. ❤️</p>
+    Página creada por <strong>Anth'Zz Berrocal</strong> masNa <strong>⚡BerMatModZ🔥</strong> © 2025
   </footer>
 
 </body>
