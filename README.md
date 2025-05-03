@@ -134,7 +134,7 @@
   <div class="content">
     <!-- Imagen Personal -->
     <div class="image-container">
-      <img src="URL_DE_TU_IMAGEN_AQUI" alt="Tu Imagen">
+      <img src="https://postimg.cc/PLhYpTk1" alt="Tu Imagen">
     </div>
 
     <h2>Bienvenido a la página oficial de BerMatModZ</h2>
