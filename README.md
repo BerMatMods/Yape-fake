@@ -11,20 +11,21 @@
             font-family: 'Raleway', sans-serif;
             color: #ffffff;
             overflow-x: hidden;
+            backdrop-filter: blur(3px);
         }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             text-align: center;
-            padding: 30px 0;
-            background: rgba(0, 0, 0, 0.8);
+            padding: 50px 0;
+            background: rgba(0, 0, 0, 0.85);
             border-radius: 20px;
-            box-shadow: 0 0 50px rgba(0, 255, 174, 0.7);
+            box-shadow: 0 0 80px rgba(0, 255, 174, 0.7);
         }
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             color: #00ffae;
             text-shadow: 0 0 20px #00ffae, 0 0 40px #00ffae;
             margin-bottom: 20px;
@@ -32,44 +33,48 @@
         }
         .banner h2 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #ff007f;
             margin-bottom: 15px;
+            text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f;
         }
         .info-card {
             background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
             color: #ffffff;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             box-shadow: 0 0 20px rgba(0, 255, 174, 0.5), 0 0 40px rgba(0, 255, 174, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
         }
         .info-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 255, 174, 0.8), 0 0 60px rgba(0, 255, 174, 0.5);
+            box-shadow: 0 0 50px rgba(0, 255, 174, 0.8), 0 0 100px rgba(0, 255, 174, 0.5);
         }
         .info-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
+            font-size: 2.2rem;
             color: #00ffae;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px #00ffae, 0 0 30px #00ffae;
         }
         .info-description {
             font-family: 'Raleway', sans-serif;
             color: #c7f5ff;
+            line-height: 1.8;
         }
         .social-links a {
             display: inline-block;
-            margin: 15px;
+            margin: 20px;
             transition: transform 0.3s;
         }
         .social-links img {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
         }
         .social-links a:hover {
             transform: scale(1.2);
@@ -77,12 +82,12 @@
         .whatsapp-link {
             background-color: #25D366;
             color: #ffffff;
-            padding: 15px 30px;
+            padding: 20px 40px;
             border-radius: 50px;
-            margin-top: 20px;
+            margin-top: 30px;
             text-decoration: none;
-            font-size: 1.3rem;
-            box-shadow: 0 0 30px rgba(37, 211, 102, 0.7);
+            font-size: 1.7rem;
+            box-shadow: 0 0 40px rgba(37, 211, 102, 0.8);
             transition: background-color 0.3s, transform 0.3s;
         }
         .whatsapp-link:hover {
@@ -99,15 +104,19 @@
         </div>
         <div class="info-card">
             <div class="info-title">💻 Programador y Hacker Profesional</div>
-            <div class="info-description">Creador de ⚡BerMat-Bot MD🔥, un experto en tecnología, automatización e inteligencia artificial, con habilidades avanzadas en ciberseguridad y desarrollo de software.</div>
+            <div class="info-description">Creador de ⚡BerMat-Bot MD🔥, con experiencia en inteligencia artificial, automatización, ciberseguridad y desarrollo de software. Apasionado por el hacking ético y la programación avanzada, con un enfoque en el dominio del futuro digital.</div>
         </div>
         <div class="info-card">
             <div class="info-title">📍 Ubicación</div>
-            <div class="info-description">Andahuaylas, Perú - la cuna de la creatividad y la tecnología en el corazón de los Andes.</div>
+            <div class="info-description">Andahuaylas, Perú - el corazón de los Andes, cuna de innovación tecnológica y creatividad sin límites.</div>
+        </div>
+        <div class="info-card">
+            <div class="info-title">🚀 Proyectos</div>
+            <div class="info-description">Desarrollador de BerMatMods_Bot, BerMat_Mods, ⚡BerMat-Bot MD🔥, combinando inteligencia artificial, automatización y ciberseguridad para dominar el futuro digital. Incluyendo herramientas avanzadas para Termux y sistemas automatizados para WhatsApp.</div>
         </div>
         <div class="info-card">
             <div class="info-title">💥 Futuro</div>
-            <div class="info-description">Dominando el mundo de la ciberseguridad con proyectos innovadores y habilidades en constante evolución.</div>
+            <div class="info-description">Con una visión clara de dominar la tecnología global, creando soluciones avanzadas para el mundo digital y liderando proyectos de ciberseguridad y programación avanzada.</div>
         </div>
         <div class="social-links">
             <a href="https://www.facebook.com/AnthZzBerrocal" target="_blank"><img src="https://i.imgur.com/3oHhQ3M.png" alt="Facebook"></a>
