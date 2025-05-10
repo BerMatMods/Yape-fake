@@ -1,180 +1,104 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡BerMatModZ🔥 - Página Oficial</title>
-  <!-- Fuentes Elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-  <!-- Iconos de FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #121212, #333);
-      font-family: 'Poppins', sans-serif;
-      color: #00ffcc;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    /* Banner con Animación */
-    .banner {
-      font-size: 4em;
-      margin-top: 40px;
-      color: #ffde59;
-      text-shadow: 0 0 30px #00ffcc, 0 0 10px #ffde59;
-      animation: moverBanner 10s linear infinite;
-    }
-
-    @keyframes moverBanner {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(20px); }
-      100% { transform: translateY(0px); }
-    }
-
-    /* Máscara de Anonymous con Animación */
-    .anon-mask {
-      width: 200px;
-      margin: 50px auto;
-      animation: floatMask 6s ease-in-out infinite;
-    }
-
-    @keyframes floatMask {
-      0% { transform: translateY(0); opacity: 0.8; }
-      50% { transform: translateY(20px); opacity: 1; }
-      100% { transform: translateY(0); opacity: 0.8; }
-    }
-
-    /* Contenido Principal */
-    .content {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
-    }
-
-    .content h2 {
-      font-family: 'Roboto', sans-serif;
-      color: #ffffff;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 0 0 15px #ffde59;
-    }
-
-    .content p {
-      font-size: 1.2em;
-      color: #e0e0e0;
-    }
-
-    .content ul {
-      list-style: none;
-      padding-left: 0;
-      color: #ffffff;
-    }
-
-    .content ul li {
-      margin: 10px 0;
-    }
-
-    .content .image-container {
-      margin-top: 40px;
-      border-radius: 50%;
-      width: 180px;
-      height: 180px;
-      overflow: hidden;
-      border: 4px solid #00ffcc;
-      margin-bottom: 30px;
-    }
-
-    .content .image-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Redes Sociales */
-    .social-links {
-      margin-top: 40px;
-    }
-
-    .social-links a {
-      color: #ffffff;
-      font-size: 2.5em;
-      margin: 0 20px;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #ffde59;
-    }
-
-    footer {
-      margin-top: 60px;
-      color: #999;
-      font-size: 1em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BerMatMods - Futurista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #000428, #004e92);
+            font-family: 'Orbitron', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 30px 0;
+        }
+        h1 {
+            font-size: 3.5rem;
+            color: #00ffae;
+            text-shadow: 0 0 20px #00ffae, 0 0 40px #00ffae;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #c7f5ff;
+            margin-bottom: 15px;
+        }
+        .social-links a {
+            color: #00e0ff;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .social-links a:hover {
+            color: #ff007f;
+            transform: scale(1.2);
+        }
+        .banner {
+            background: #222;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 174, 0.5), 0 0 40px rgba(0, 255, 174, 0.2);
+        }
+        .banner h2 {
+            font-size: 2.5rem;
+            color: #ff007f;
+            margin-bottom: 15px;
+        }
+        .emoji-deco {
+            font-size: 3rem;
+            margin: 20px 0;
+            animation: glow 3s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 20px #00ffae, 0 0 40px #00e0ff; }
+            100% { text-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f; }
+        }
+        .whatsapp-link {
+            background-color: #25D366;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .whatsapp-link:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Banner con tu Nombre -->
-  <div class="banner">⚡BerMatModZ🔥</div>
-
-  <!-- Máscara de Anonymous -->
-  <div class="anon-mask">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Guy_Fawkes_mask.svg/480px-Guy_Fawkes_mask.svg.png" alt="Anonymous Mask">
-  </div>
-
-  <!-- Contenido Principal -->
-  <div class="content">
-    <!-- Imagen Personal -->
-    <div class="image-container">
-      <img src="https://postimg.cc/PLhYpTk1" alt="Tu Imagen">
+    <div class="container">
+        <h1>⚡ BerMatMods ⚡</h1>
+        <div class="banner">
+            <h2>𝑩𝑬𝑹𝑴𝑨𝑻𝑴𝑶𝑫𝑺 🫦 𝑻𝑬 𝑫𝑨 🤡𝑳𝑨 𝑩𝑰𝑬𝑵𝑽𝑬𝑵𝑰𝑫𝑨 👹 𝑨𝑳 🔪𝑴𝑼𝑵𝑫𝑶 𝑫𝑬 🔥𝑪𝑰𝑽𝑬𝑹𝑨𝑻𝑨𝑸𝑼𝑬 😎 𝒀 💥𝑪𝑰𝑽𝑬𝑹𝑺𝑬𝑮𝑼𝑹𝑰𝑫𝑨𝑫 👽🤖</h2>
+        </div>
+        <p>💻 <strong>Programador y Hacker Profesional</strong> - Creador de ⚡BerMat-Bot MD🔥</p>
+        <p>📍 Ubicación: Andahuaylas, Perú</p>
+        <p>📱 WhatsApp: +51 937556459 (Solo Proyectos)</p>
+        <p>💥 Experto en Tecnología, IA y Automatización</p>
+        <p>🤖 Creaciones: BerMatMods_Bot, BerMat_Mods, ⚡BerMat-Bot MD🔥</p>
+        <p>📈 Futuro: Dominando el mundo de la ciberseguridad</p>
+        <div class="emoji-deco">🔥👑💻⚙️🎯🚀</div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/AnthZzBerrocal" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/AnthZzBerrocal" target="_blank">Instagram</a>
+            <a href="https://www.github.com/AnthZzBerrocal" target="_blank">GitHub</a>
+            <a href="https://www.tiktok.com/@AnthZzBerrocal" target="_blank">TikTok</a>
+        </div>
+        <a href="https://wa.me/51937556459?text=¡Hola%20BerMatModZ!%20Me%20gustaría%20hablar%20contigo%20sobre%20tus%20proyectos." class="whatsapp-link" target="_blank">💬 Envíame un mensaje en WhatsApp</a>
     </div>
-
-    <h2>Bienvenido a la página oficial de BerMatModZ</h2>
-    <p>Soy programador, hacker ético y creador de bots con inteligencia artificial. ¡Transformo la tecnología!</p>
-    <p>Originario de <strong>Andahuaylas</strong>, con un compromiso para cambiar el futuro.</p>
-    <p>Novia: <strong>Briyidth Jhorgina</strong> 💖</p>
-
-    <h2>Proyectos:</h2>
-    <ul>
-      <li>⚡ BerMat-Bot MD🔥 (WhatsApp Bot con IA)</li>
-      <li>FAMA - Fuerza Anónima de Mentes Avanzadas</li>
-      <li>Simulador de Hack con efectos de voz y animaciones</li>
-    </ul>
-
-    <p>"El conocimiento es libre. Somos Anonymous. Somos BerMatModZ. No perdonamos, no olvidamos. ¡Prepárate!"</p>
-
-    <!-- Redes Sociales -->
-    <div class="social-links">
-      <a href="https://www.facebook.com/AnthZz.Berrocal" target="_blank">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/AnthZz.Berrocal" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://open.spotify.com/user/AnthZz.Berrocal" target="_blank">
-        <i class="fab fa-spotify"></i>
-      </a>
-      <a href="https://www.youtube.com/c/AnthZzBerrocal" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://wa.me/+51900233784" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
-  </div>
-
-  <!-- Pie de Página -->
-  <footer>
-    Página creada por <strong>Anth'Zz Berrocal</strong> masNa <strong>⚡BerMatModZ🔥</strong> © 2025
-  </footer>
-
 </body>
 </html>
