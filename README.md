@@ -1,130 +1,267 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BerMatMods - Profesional Futurista</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: url('https://i.imgur.com/jtD4XQX.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Raleway', sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-            backdrop-filter: blur(3px);
-        }
-        .container {
-            width: 90%;
-            max-width: 1400px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 50px 0;
-            background: rgba(0, 0, 0, 0.85);
-            border-radius: 20px;
-            box-shadow: 0 0 80px rgba(0, 255, 174, 0.7);
-        }
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4.5rem;
-            color: #00ffae;
-            text-shadow: 0 0 20px #00ffae, 0 0 40px #00ffae;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-        .banner h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            color: #ff007f;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px #ff007f, 0 0 30px #ff007f;
-        }
-        .info-card {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 25px;
-            color: #ffffff;
-            font-size: 1.3rem;
-            box-shadow: 0 0 20px rgba(0, 255, 174, 0.5), 0 0 40px rgba(0, 255, 174, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: left;
-        }
-        .info-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(0, 255, 174, 0.8), 0 0 100px rgba(0, 255, 174, 0.5);
-        }
-        .info-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            color: #00ffae;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px #00ffae, 0 0 30px #00ffae;
-        }
-        .info-description {
-            font-family: 'Raleway', sans-serif;
-            color: #c7f5ff;
-            line-height: 1.8;
-        }
-        .social-links a {
-            display: inline-block;
-            margin: 20px;
-            transition: transform 0.3s;
-        }
-        .social-links img {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
-        }
-        .social-links a:hover {
-            transform: scale(1.2);
-        }
-        .whatsapp-link {
-            background-color: #25D366;
-            color: #ffffff;
-            padding: 20px 40px;
-            border-radius: 50px;
-            margin-top: 30px;
-            text-decoration: none;
-            font-size: 1.7rem;
-            box-shadow: 0 0 40px rgba(37, 211, 102, 0.8);
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .whatsapp-link:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>💖 Para Briyidth - Acceso Protegido 💖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #fce1e4, #fbb1b1), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4a2c2a;
+    overflow: hidden;
+    user-select: none;
+  }
+  #access-container {
+    background: rgba(255, 240, 240, 0.85);
+    padding: 35px 45px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #e86868cc;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+  }
+  #access-container h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #b33a3a;
+    text-shadow: 2px 2px 6px #fff0f0;
+  }
+  #access-container p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  #password-input {
+    font-size: 1.3rem;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 3px solid #b33a3a;
+    width: 100%;
+    margin-bottom: 22px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+  #submit-btn {
+    background-color: #b33a3a;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 8px 15px #7a2121cc;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    user-select: none;
+  }
+  #submit-btn:hover {
+    background-color: #7a2121;
+  }
+  #error-msg {
+    color: #b33232;
+    font-weight: 700;
+    margin-top: 14px;
+    min-height: 28px;
+    font-size: 1.1rem;
+  }
+  #recover-link {
+    margin-top: 28px;
+    font-size: 1rem;
+    color: #b33a3a;
+  }
+  #recover-link strong {
+    font-weight: 900;
+  }
+  #recover-link a {
+    color: #7a2121;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  #recover-link a:hover {
+    color: #b33a3a;
+  }
+
+  /* Estilos página principal */
+  #main-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    color: #4a2c2a;
+  }
+  #main-page.visible {
+    display: flex;
+  }
+  header {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8rem;
+    margin: 30px 0 15px 0;
+    color: #b33a3a;
+    text-shadow: 1px 1px 6px #fff3f3;
+    user-select: none;
+  }
+  .subtitle {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 45px;
+    user-select: none;
+  }
+  .counter {
+    background: #fff0f0cc;
+    padding: 30px 50px;
+    border-radius: 18px;
+    box-shadow: 0 12px 38px #f2a2a287;
+    text-align: center;
+    max-width: 480px;
+    width: 100%;
+    user-select: none;
+  }
+  .counter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 18px;
+    color: #b33232;
+  }
+  .time-values {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .time-values div {
+    flex: 1 1 80px;
+    margin: 8px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f6c8c8;
+    box-shadow: 0 5px 9px #dc9999;
+    user-select: text;
+  }
+  .message, #secret-message, #sent-message {
+    margin-top: 48px;
+    max-width: 480px;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.6;
+    color: #7a3b3b;
+    font-size: 1.55rem;
+    font-family: 'Great Vibes', cursive;
+    padding: 22px 26px;
+    border-radius: 20px;
+    background: #f9eaea;
+    box-shadow: 0 8px 20px #f2a2a2b3;
+    user-select: none;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: all 0.55s ease;
+  }
+  .visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+  button {
+    margin-top: 42px;
+    background-color: #b33a3a;
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 60px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: 0 7px 15px #7a2121cc;
+    transition: background-color 0.35s ease;
+    font-weight: 900;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #7a2121;
+  }
+  footer {
+    margin-top: auto;
+    padding: 22px 12px 18px;
+    font-size: 1rem;
+    color: #842121;
+    user-select: none;
+  }
+
+  /* Corazones animados */
+  .heart {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    background: #b33a3a;
+    transform-origin: center;
+    animation: floatUp linear forwards;
+    opacity: 0.85;
+    clip-path: polygon(
+      50% 0%, 61% 12%, 75% 15%, 80% 25%, 80% 40%, 75% 55%, 60% 70%, 50% 80%, 40% 70%, 25% 55%, 20% 40%, 20% 25%, 25% 15%, 39% 12%
+    );
+    user-select: none;
+  }
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 0.85;
+    }
+    100% {
+      transform: translateY(-150vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>⚡ BerMatMods ⚡</h1>
-        <div class="banner">
-            <h2>𝑩𝑬𝑹𝑴𝑨𝑻𝑴𝑶𝑫𝑺 🫦 𝑻𝑬 𝑫𝑨 🤡𝑳𝑨 𝑩𝑰𝑬𝑵𝑽𝑬𝑵𝑰𝑫𝑨 👹 𝑨𝑳 🔪𝑴𝑼𝑵𝑫𝑶 𝑫𝑬 🔥𝑪𝑰𝑽𝑬𝑹𝑨𝑻𝑨𝑸𝑼𝑬 😎 𝒀 💥𝑪𝑰𝑽𝑬𝑹𝑺𝑬𝑮𝑼𝑹𝑰𝑫𝑨𝑫 👽🤖</h2>
-        </div>
-        <div class="info-card">
-            <div class="info-title">💻 Programador y Hacker Profesional</div>
-            <div class="info-description">Creador de ⚡BerMat-Bot MD🔥, con experiencia en inteligencia artificial, automatización, ciberseguridad y desarrollo de software. Apasionado por el hacking ético y la programación avanzada, con un enfoque en el dominio del futuro digital.</div>
-        </div>
-        <div class="info-card">
-            <div class="info-title">📍 Ubicación</div>
-            <div class="info-description">Andahuaylas, Perú - el corazón de los Andes, cuna de innovación tecnológica y creatividad sin límites.</div>
-        </div>
-        <div class="info-card">
-            <div class="info-title">🚀 Proyectos</div>
-            <div class="info-description">Desarrollador de BerMatMods_Bot, BerMat_Mods, ⚡BerMat-Bot MD🔥, combinando inteligencia artificial, automatización y ciberseguridad para dominar el futuro digital. Incluyendo herramientas avanzadas para Termux y sistemas automatizados para WhatsApp.</div>
-        </div>
-        <div class="info-card">
-            <div class="info-title">💥 Futuro</div>
-            <div class="info-description">Con una visión clara de dominar la tecnología global, creando soluciones avanzadas para el mundo digital y liderando proyectos de ciberseguridad y programación avanzada.</div>
-        </div>
-        <div class="social-links">
-            <a href="https://www.facebook.com/AnthZzBerrocal" target="_blank"><img src="https://i.imgur.com/3oHhQ3M.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/AnthZzBerrocal" target="_blank"><img src="https://i.imgur.com/jT5FfZf.png" alt="Instagram"></a>
-            <a href="https://www.github.com/AnthZzBerrocal" target="_blank"><img src="https://i.imgur.com/9JbN0XI.png" alt="GitHub"></a>
-            <a href="https://www.tiktok.com/@AnthZzBerrocal" target="_blank"><img src="https://i.imgur.com/4SZoBl5.png" alt="TikTok"></a>
-        </div>
-        <a href="https://wa.me/51937556459?text=¡Hola%20BerMatModZ!%20Me%20gustaría%20hablar%20contigo%20sobre%20tus%20proyectos." class="whatsapp-link" target="_blank">💬 Envíame un mensaje en WhatsApp</a>
+
+<!-- Acceso protegido -->
+<div id="access-container" role="main" aria-label="Acceso protegido para Briyidth">
+  <h2>💖 Código de acceso 💖</h2>
+  <p>Introduce la fecha cuando nos besamos por primera vez (dd/mm/aa):</p>
+  <input type="text" id="password-input" placeholder="Ejemplo: 14/01/24" aria-label="Código de acceso" autocomplete="off" />
+  <button id="submit-btn" aria-label="Enviar código de acceso">Entrar</button>
+  <div id="error-msg" aria-live="polite"></div>
+
+  <p id="recover-link" aria-label="Recuperar código de acceso">
+    ¿<strong>Olvidaste la fecha</strong>?&nbsp;
+    <a href="https://wa.me/51937556459?text=%E2%9D%A4%EF%B8%8F%20*AnthZz%20Berrocal*%20%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20*Olvid%C3%B3%20la%20fecha%20tu%20princesa%20%E2%9D%A4%EF%B8%8F*" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       style="color:#7a2121; font-weight: 900; text-decoration: underline; cursor: pointer;">
+      Haz click aquí para recuperar
+    </a>
+  </p>
+</div>
+
+<!-- Página principal oculta inicialmente -->
+<div id="main-page" role="main" aria-label="Página principal romántica para Briyidth">
+  <header>Para Briyidth ❤️</header>
+  <div class="subtitle">Celebrando nuestro amor cada instante</div>
+
+  <div class="counter" aria-label="Contador del tiempo juntos">
+    <h2>Tiempo juntos</h2>
+    <div class="time-values" aria-live="polite" aria-atomic="true">
+      <div><span id="months">0</span><br>Meses</div>
+      <div><span id="weeks">0</span><br>Semanas</div>
+      <div><span id="days">0</span><br>Días</div>
+      <div><span id="hours">0</span><br>Horas</div>
+      <div><span id="minutes">0</span><br>Minutos</div>
+      <div><span id="seconds">0</span><br>Segundos</div>
     </div>
-</body>
-</html>
+  </div>
+
+  <div class="message visible" id
