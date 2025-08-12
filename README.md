@@ -3,201 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>💖 Para Briyidth - Acceso Protegido 💖</title>
+<title>💖 Para Briyidth - Amor Interactivo 💖</title>
 <style>
+  /* Fuentes */
   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
   body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #fce1e4, #fbb1b1), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
-    background-size: cover;
     font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ffe5e9 0%, #ffb3bf 50%, #ff7a87 100%);
+    color: #4a1f1f;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #4a2c2a;
-    overflow: hidden;
     user-select: none;
-  }
-  #access-container {
-    background: rgba(255, 240, 240, 0.85);
-    padding: 35px 45px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px #e86868cc;
-    text-align: center;
-    max-width: 420px;
-    width: 90%;
-  }
-  #access-container h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.5rem;
-    margin-bottom: 25px;
-    color: #b33a3a;
-    text-shadow: 2px 2px 6px #fff0f0;
-  }
-  #access-container p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  #password-input {
-    font-size: 1.3rem;
-    padding: 14px 18px;
-    border-radius: 10px;
-    border: 3px solid #b33a3a;
-    width: 100%;
-    margin-bottom: 22px;
-    text-align: center;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-  }
-  #submit-btn {
-    background-color: #b33a3a;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 50px;
-    font-size: 1.4rem;
-    cursor: pointer;
-    box-shadow: 0 8px 15px #7a2121cc;
-    transition: background-color 0.3s ease;
-    font-weight: 700;
-    user-select: none;
-  }
-  #submit-btn:hover {
-    background-color: #7a2121;
-  }
-  #error-msg {
-    color: #b33232;
-    font-weight: 700;
-    margin-top: 14px;
-    min-height: 28px;
-    font-size: 1.1rem;
-  }
-  #recover-link {
-    margin-top: 28px;
-    font-size: 1rem;
-    color: #b33a3a;
-  }
-  #recover-link strong {
-    font-weight: 900;
-  }
-  #recover-link a {
-    color: #7a2121;
-    font-weight: 900;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  #recover-link a:hover {
-    color: #b33a3a;
-  }
-
-  /* Estilos página principal */
-  #main-page {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
     position: relative;
-    width: 100%;
-    max-width: 600px;
-    color: #4a2c2a;
-  }
-  #main-page.visible {
-    display: flex;
-  }
-  header {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3.8rem;
-    margin: 30px 0 15px 0;
-    color: #b33a3a;
-    text-shadow: 1px 1px 6px #fff3f3;
-    user-select: none;
-  }
-  .subtitle {
-    font-weight: 700;
-    font-size: 1.25rem;
-    margin-bottom: 45px;
-    user-select: none;
-  }
-  .counter {
-    background: #fff0f0cc;
-    padding: 30px 50px;
-    border-radius: 18px;
-    box-shadow: 0 12px 38px #f2a2a287;
-    text-align: center;
-    max-width: 480px;
-    width: 100%;
-    user-select: none;
-  }
-  .counter h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.8rem;
-    margin-bottom: 18px;
-    color: #b33232;
-  }
-  .time-values {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 22px;
-    font-weight: 700;
-    font-size: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .time-values div {
-    flex: 1 1 80px;
-    margin: 8px;
-    padding: 12px;
-    border-radius: 10px;
-    background: #f6c8c8;
-    box-shadow: 0 5px 9px #dc9999;
-    user-select: text;
-  }
-  .message, #secret-message, #sent-message {
-    margin-top: 48px;
-    max-width: 480px;
-    font-style: italic;
-    text-align: center;
-    line-height: 1.6;
-    color: #7a3b3b;
-    font-size: 1.55rem;
-    font-family: 'Great Vibes', cursive;
-    padding: 22px 26px;
-    border-radius: 20px;
-    background: #f9eaea;
-    box-shadow: 0 8px 20px #f2a2a2b3;
-    user-select: none;
-    opacity: 0;
-    transform: translateY(18px);
-    transition: all 0.55s ease;
-  }
-  .visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-  button {
-    margin-top: 42px;
-    background-color: #b33a3a;
-    color: #fff;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 60px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    box-shadow: 0 7px 15px #7a2121cc;
-    transition: background-color 0.35s ease;
-    font-weight: 900;
-    user-select: none;
-  }
-  button:hover {
-    background-color: #7a2121;
-  }
-  footer {
-    margin-top: auto;
-    padding: 22px 12px 18px;
-    font-size: 1rem;
-    color: #842121;
-    user-select: none;
   }
 
   /* Corazones animados */
@@ -205,14 +31,14 @@
     position: fixed;
     width: 24px;
     height: 24px;
-    background: #b33a3a;
+    background: #ff4f6d;
     transform-origin: center;
     animation: floatUp linear forwards;
     opacity: 0.85;
     clip-path: polygon(
       50% 0%, 61% 12%, 75% 15%, 80% 25%, 80% 40%, 75% 55%, 60% 70%, 50% 80%, 40% 70%, 25% 55%, 20% 40%, 20% 25%, 25% 15%, 39% 12%
     );
-    user-select: none;
+    z-index: 0;
   }
   @keyframes floatUp {
     0% {
@@ -224,9 +50,260 @@
       opacity: 0;
     }
   }
+
+  /* Contenedor principal */
+  #access-container, #main-page {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(255, 79, 109, 0.4);
+    padding: 40px 50px;
+    max-width: 480px;
+    width: 90vw;
+    text-align: center;
+    z-index: 1;
+  }
+
+  /* --- Acceso --- */
+  #access-container h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.8rem;
+    color: #ff2d5a;
+    text-shadow: 1px 1px 5px #ffd7dd;
+    margin-bottom: 30px;
+    user-select: none;
+  }
+
+  #access-container p {
+    font-size: 1.25rem;
+    color: #772b35;
+    margin-bottom: 25px;
+  }
+
+  #password-input {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: 3px solid #ff2d5a;
+    outline: none;
+    text-align: center;
+    letter-spacing: 0.15em;
+    color: #772b35;
+    transition: border-color 0.3s ease;
+  }
+  #password-input:focus {
+    border-color: #ff4f6d;
+  }
+
+  #submit-btn {
+    margin-top: 28px;
+    background-color: #ff2d5a;
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.4rem;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(255, 79, 109, 0.7);
+    transition: background-color 0.4s ease;
+  }
+  #submit-btn:hover {
+    background-color: #d62c48;
+  }
+
+  #error-msg {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #d32f2f;
+    min-height: 28px;
+  }
+
+  #recover-link {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #772b35;
+  }
+  #recover-link strong {
+    font-weight: 900;
+  }
+  #recover-link a {
+    color: #ff2d5a;
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  #recover-link a:hover {
+    color: #d62c48;
+  }
+
+  /* --- Página Principal --- */
+  #main-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  #main-page.visible {
+    display: flex;
+  }
+
+  #main-page header {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.2rem;
+    color: #ff2d5a;
+    text-shadow: 2px 2px 10px #ffd7dd;
+    margin-bottom: 15px;
+    user-select: none;
+  }
+  #main-page .subtitle {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #772b35;
+    margin-bottom: 50px;
+    user-select: none;
+  }
+  .counter {
+    background: #fff0f0;
+    padding: 32px 55px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px #ff4f6d70;
+    max-width: 520px;
+    width: 100%;
+    user-select: none;
+  }
+  .counter h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #d81e3e;
+    margin-bottom: 22px;
+  }
+  .time-values {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #772b35;
+  }
+  .time-values > div {
+    flex: 1 1 90px;
+    margin: 12px;
+    padding: 16px 0;
+    border-radius: 20px;
+    background: #ffb0bb;
+    box-shadow: 0 8px 16px #d62c48aa;
+    user-select: text;
+  }
+
+  .time-values > div span {
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* Mensajes */
+  .message, #secret-message, #sent-message {
+    margin-top: 55px;
+    max-width: 520px;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.6;
+    color: #7a2a3b;
+    font-size: 1.65rem;
+    font-family: 'Great Vibes', cursive;
+    padding: 26px 32px;
+    border-radius: 28px;
+    background: #ffd7dd;
+    box-shadow: 0 12px 28px #ff2d5a88;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.7s ease;
+    user-select: none;
+  }
+  .visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Botones */
+  button {
+    margin-top: 48px;
+    background-color: #ff2d5a;
+    color: #fff;
+    border: none;
+    padding: 16px 48px;
+    border-radius: 60px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 10px 26px rgba(255, 79, 109, 0.75);
+    font-weight: 900;
+    transition: background-color 0.4s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #d62c48;
+  }
+
+  footer {
+    margin-top: 70px;
+    padding: 18px 10px;
+    font-size: 1rem;
+    color: #942433;
+    user-select: none;
+  }
+
+  /* Animación escritura */
+  .typing {
+    border-right: 3px solid #d62c48;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(40, end) forwards, blink 1s step-end infinite;
+  }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    #access-container, #main-page {
+      padding: 30px 25px;
+      width: 95vw;
+    }
+    #main-page header {
+      font-size: 3.2rem;
+    }
+    .counter h2 {
+      font-size: 2.2rem;
+    }
+    .time-values > div {
+      font-size: 1.3rem;
+    }
+  }
 </style>
 </head>
 <body>
+
+<!-- Corazones animados -->
+<script>
+  // Crea corazones flotantes aleatorios
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+    heart.style.width = heart.style.height = (12 + Math.random() * 18) + 'px';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+  }
+  setInterval(createHeart, 400);
+</script>
 
 <!-- Acceso protegido -->
 <div id="access-container" role="main" aria-label="Acceso protegido para Briyidth">
@@ -241,20 +318,20 @@
     <a href="https://wa.me/51937556459?text=%E2%9D%A4%EF%B8%8F%20*AnthZz%20Berrocal*%20%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20*Olvid%C3%B3%20la%20fecha%20tu%20princesa%20%E2%9D%A4%EF%B8%8F*" 
        target="_blank" 
        rel="noopener noreferrer"
-       style="color:#7a2121; font-weight: 900; text-decoration: underline; cursor: pointer;">
+       style="color:#ff2d5a; font-weight: 900; text-decoration: underline; cursor: pointer;">
       Haz click aquí para recuperar
     </a>
   </p>
 </div>
 
 <!-- Página principal oculta inicialmente -->
-<div id="main-page" role="main" aria-label="Página principal romántica para Briyidth">
+<div id="main-page" role="main" aria-label="Página principal romántica para Briyidth" aria-live="polite">
   <header>Para Briyidth ❤️</header>
   <div class="subtitle">Celebrando nuestro amor cada instante</div>
 
   <div class="counter" aria-label="Contador del tiempo juntos">
     <h2>Tiempo juntos</h2>
-    <div class="time-values" aria-live="polite" aria-atomic="true">
+    <div class="time-values" aria-atomic="true" aria-live="polite">
       <div><span id="months">0</span><br>Meses</div>
       <div><span id="weeks">0</span><br>Semanas</div>
       <div><span id="days">0</span><br>Días</div>
@@ -264,4 +341,123 @@
     </div>
   </div>
 
-  <div class="message visible" id
+  <div class="message visible" id="main-message">
+    Cada momento contigo es un regalo que atesoro en mi corazón.<br>
+    ¡Te amo muchísimo, mi reina hermosa! ❤️
+  </div>
+
+  <button id="secret-btn" aria-expanded="false" aria-controls="secret-message" aria-label="Mostrar mensaje secreto">
+    Mostrar mensaje secreto
+  </button>
+
+  <div id="secret-message" class="message" role="region" aria-live="polite" aria-atomic="true" style="max-width:480px; margin-top:30px; user-select:none;">
+    <!-- Mensajes secretos aparecerán aquí -->
+  </div>
+
+  <button id="send-love-btn" aria-label="Enviar mensaje de amor">
+    Enviar mensaje de amor ❤️
+  </button>
+
+  <div id="sent-message" class="message" role="alert" aria-live="assertive"></div>
+
+  <footer>⚡ BerMat-Bot MD🔥 &copy; 2025</footer>
+</div>
+
+<script>
+  // Acceso con contraseña
+  const password = '14/01/24';
+  const accessContainer = document.getElementById('access-container');
+  const passwordInput = document.getElementById('password-input');
+  const submitBtn = document.getElementById('submit-btn');
+  const errorMsg = document.getElementById('error-msg');
+  const mainPage = document.getElementById('main-page');
+
+  submitBtn.addEventListener('click', () => {
+    const entered = passwordInput.value.trim();
+    if(entered === password) {
+      errorMsg.textContent = '';
+      accessContainer.style.display = 'none';
+      mainPage.classList.add('visible');
+      startCounter();
+      setupSecretMessages();
+    } else {
+      errorMsg.textContent = 'Código incorrecto, intenta de nuevo ❤️';
+      passwordInput.value = '';
+      passwordInput.focus();
+    }
+  });
+
+  passwordInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') submitBtn.click();
+  });
+
+  // Contador
+  function startCounter() {
+    const monthsEl = document.getElementById('months');
+    const weeksEl = document.getElementById('weeks');
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    // Fecha del primer beso (año, mes-1, día, hora, minuto, segundo)
+    const firstKiss = new Date(2024, 0, 14, 0, 0, 0); // 14 de enero 2024
+
+    function updateCounter() {
+      const now = new Date();
+      let diff = now - firstKiss;
+
+      if(diff < 0) diff = 0;
+
+      // Cálculos aproximados
+      const msInSecond = 1000;
+      const msInMinute = msInSecond * 60;
+      const msInHour = msInMinute * 60;
+      const msInDay = msInHour * 24;
+      const msInWeek = msInDay * 7;
+      const msInMonth = msInDay * 30.44; // promedio
+
+      const months = Math.floor(diff / msInMonth);
+      diff -= months * msInMonth;
+
+      const weeks = Math.floor(diff / msInWeek);
+      diff -= weeks * msInWeek;
+
+      const days = Math.floor(diff / msInDay);
+      diff -= days * msInDay;
+
+      const hours = Math.floor(diff / msInHour);
+      diff -= hours * msInHour;
+
+      const minutes = Math.floor(diff / msInMinute);
+      diff -= minutes * msInMinute;
+
+      const seconds = Math.floor(diff / msInSecond);
+
+      monthsEl.textContent = months;
+      weeksEl.textContent = weeks;
+      daysEl.textContent = days;
+      hoursEl.textContent = hours;
+      minutesEl.textContent = minutes;
+      secondsEl.textContent = seconds;
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 1000);
+  }
+
+  // Mensajes secretos
+  const secretBtn = document.getElementById('secret-btn');
+  const secretMessage = document.getElementById('secret-message');
+  const messages = [
+    "Eres mi sueño hecho realidad, la luz que guía mis días y la paz de mis noches.",
+    "Mi corazón late más fuerte cada vez que pienso en ti, Briyidth.",
+    "Gracias por ser mi compañera, mi amiga y mi amor eterno.",
+    "Cada día contigo es una bendición que atesoro profundamente.",
+    "Tu sonrisa ilumina hasta mis días más oscuros.",
+    "Te amo con toda el alma y siempre estaré a tu lado."
+  ];
+
+  let msgIndex = 0;
+  function setupSecretMessages() {
+    secretBtn.addEventListener
