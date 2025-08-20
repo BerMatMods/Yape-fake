@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>BerMatMods TECH STORE</title>
+    <title>TECH STORE</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap');
         
@@ -1148,10 +1148,12 @@
     <div class="bg-element line" style="width: 120px; height: 2px; bottom: 40%; left: 15%; transform: rotate(60deg); opacity: 0.05;"></div>
     
     <!-- Header -->
-    <header class="header">
-        <div class="logo">
-            <div class="logo-icon"></div>
-            <span>AnthZz Berrocal</span>
+<header class="header">
+    <div class="logo">
+        <img src="https://i.postimg.cc/yY8RtRwY/1755667396.png" alt="Logo" class="logo-icon">
+        <span>AnthZz Berrocal</span>
+    </div>
+</header>
         </div>
         <button class="menu-toggle">☰</button>
         <nav class="nav">
@@ -1165,7 +1167,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">BerMatMods_TECH STORE</h1>
+            <h1 class="hero-title">TECH STORE</h1>
             <p class="hero-subtitle">Domina el mundo del hacking ético, recuperación de cuentas y seguridad digital con los cursos más avanzados del mercado. Aprende técnicas profesionales de manera ética y legal.</p>
             
             <div class="hero-info">
@@ -1236,7 +1238,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">35 horas</span>
+                    <span class="course-duration">35 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1282,7 +1284,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">120 horas</span>
+                    <span class="course-duration">38 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1512,7 +1514,7 @@
                     <li><a href="#">Seguridad Móvil</a></li>
                     <li><a href="#">Redes Wi-Fi</a></li>
                     <li><a href="#">Informática Forense</a></li>
-                    <li><a href="#">Ingeniería Social</a></li>
+                    <li><a href="#">Servidores Http</a></li>
                 </ul>
             </div>
             
