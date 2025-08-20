@@ -1165,12 +1165,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">ACADEMIA DE CIBERSEGURIDAD</h1>
+            <h1 class="hero-title">BerMatMods_TECH STORE</h1>
             <p class="hero-subtitle">Domina el mundo del hacking ético, recuperación de cuentas y seguridad digital con los cursos más avanzados del mercado. Aprende técnicas profesionales de manera ética y legal.</p>
             
             <div class="hero-info">
                 <div class="info-item">
-                    <div class="info-label">FUNDADOR</div>
+                    <div class="info-label">CREADOR</div>
                     <div class="info-value">AnthZz Berrocal</div>
                 </div>
                 <div class="info-item">
@@ -1179,7 +1179,7 @@
                 </div>
                 <div class="info-item">
                     <div class="info-label">TELÉFONO</div>
-                    <div class="info-value">937 55 64 59</div>
+                    <div class="info-value">937 556 459</div>
                 </div>
             </div>
             
@@ -1213,7 +1213,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">40 horas</span>
+                    <span class="course-duration">40 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1259,7 +1259,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">45 horas</span>
+                    <span class="course-duration">45 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1305,7 +1305,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">30 horas</span>
+                    <span class="course-duration">30 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1328,7 +1328,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">10 horas</span>
+                    <span class="course-duration">10 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1351,7 +1351,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">35 horas</span>
+                    <span class="course-duration">35 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1374,7 +1374,7 @@
                     </ul>
                 </div>
                 <div class="course-footer">
-                    <span class="course-duration">30 horas</span>
+                    <span class="course-duration">30 soles</span>
                     <span class="course-action">Más detalles →</span>
                 </div>
             </div>
@@ -1435,7 +1435,7 @@
                 
                 <div class="form-group">
                     <label class="form-label">Teléfono</label>
-                    <input type="tel" class="form-input" placeholder="937 55 64 59">
+                    <input type="tel" class="form-input" placeholder="937 556 459">
                 </div>
                 
                 <div class="form-group">
@@ -1462,7 +1462,7 @@
                     
                     <div class="vip-plan popular">
                         <h4 class="vip-name">Profesional</h4>
-                        <div class="vip-price">S/ 299/mes</div>
+                        <div class="vip-price">S/ 50/mes</div>
                         <ul class="vip-features">
                             <li>Acceso completo</li>
                             <li>Soporte prioritario</li>
@@ -1475,7 +1475,7 @@
                     
                     <div class="vip-plan">
                         <h4 class="vip-name">Empresarial</h4>
-                        <div class="vip-price">S/ 899/mes</div>
+                        <div class="vip-price">S/ 70/mes</div>
                         <ul class="vip-features">
                             <li>Acceso total</li>
                             <li>Soporte 24/7</li>
@@ -1536,7 +1536,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📞</div>
-                        <span>937 556 459.    936 651 249</span>
+                        <span>937 556 459 🤖🤖 936 651 249</span>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">📍</div>
@@ -1544,7 +1544,7 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">🕒</div>
-                        <span>Lunes a Viernes 9:00 - 18:00</span>
+                        <span>Lunes a Domingo 9:00 - 18:00</span>
                     </div>
                 </div>
             </div>
