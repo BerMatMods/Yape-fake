@@ -1152,8 +1152,7 @@
     <div class="logo">
         <img src="https://i.postimg.cc/yY8RtRwY/1755667396.png" alt="Logo" class="logo-icon">
         <span>AnthZz Berrocal</span>
-    </div>
-</header>
+   
         </div>
         <button class="menu-toggle">☰</button>
         <nav class="nav">
