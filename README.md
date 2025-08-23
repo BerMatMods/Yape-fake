@@ -285,7 +285,61 @@
       color: var(--yape-purple);
     }
 
-    /* ===== BOTONES GRANDES (en fila horizontal) ===== */
+    /* ===== LISTA DE MOVIMIENTOS ===== */
+    .movements-list {
+      background: var(--white);
+      border-radius: 20px;
+      margin: 15px 20px;
+      padding: 10px 0;
+      box-shadow: var(--shadow);
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .movement-item {
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .movement-icon {
+      width: 50px;
+      height: 50px;
+      background: #f0f0f0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+    }
+
+    .movement-icon i {
+      color: var(--yape-green);
+      font-size: 1.3em;
+    }
+
+    .movement-info {
+      flex: 1;
+    }
+
+    .movement-name {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .movement-date {
+      font-size: 0.85em;
+      color: var(--text-secondary);
+    }
+
+    .movement-amount {
+      font-weight: bold;
+      color: var(--yape-green);
+    }
+
+    /* ===== BOTONES GRANDES (en fila horizontal, tamaño original) ===== */
     .buttons-row {
       display: flex;
       gap: 16px;
@@ -298,7 +352,7 @@
       background: var(--yape-blue);
       color: white;
       border: none;
-      padding: 16px;
+      padding: 14px;
       border-radius: 12px;
       font-size: 1.1em;
       font-weight: 600;
@@ -327,7 +381,7 @@
     }
 
     .big-button i {
-      font-size: 1.3em;
+      font-size: 1.2em;
     }
 
     .big-button span {
@@ -588,6 +642,61 @@
       color: #aaa;
       font-size: 0.8em;
     }
+
+    /* ===== PANTALLA: INFORMACIÓN DE LA APP ===== */
+    .info-screen {
+      display: none;
+      background: var(--white);
+      border-radius: 20px;
+      margin: 30px 20px;
+      padding: 25px 20px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      max-width: 370px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .info-screen h2 {
+      color: var(--yape-purple);
+      font-size: 1.5em;
+      margin-bottom: 8px;
+    }
+
+    .info-screen p {
+      color: var(--text);
+      font-size: 1em;
+      margin: 8px 0;
+    }
+
+    .info-screen .dev-name {
+      font-weight: 600;
+      color: var(--yape-green);
+      font-size: 1.1em;
+    }
+
+    .info-screen .github-link {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--yape-purple);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+
+    .info-screen .github-link img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    .info-screen .footer-text {
+      color: #888;
+      font-size: 0.85em;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
@@ -673,7 +782,7 @@
       </div>
 
       <!-- NUEVO: Información de la app -->
-      <div class="menu-item" onclick="showAppInfo()">
+      <div class="menu-item" onclick="showScreen('infoScreen')">
         <i class="fas fa-info-circle"></i>
         <div>
           <div class="label">Información de la app</div>
@@ -826,9 +935,15 @@
         </div>
       </div>
 
+      <!-- Movimientos: Mostrar lista -->
       <div class="movements-toggle" onclick="showScreen('movementsList')">
         <span>Mostrar movimientos</span>
         <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <!-- Lista de movimientos -->
+      <div id="movementsList" class="screen movements-list" style="display:none;">
+        <!-- Se llena con JavaScript -->
       </div>
 
       <!-- Botones en fila horizontal -->
@@ -942,6 +1057,23 @@
       <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
     </div>
 
+    <!-- Pantalla: Información de la app -->
+    <div id="infoScreen" class="info-screen">
+      <h2>Yape Fake v2.5</h2>
+      <p>Desarrollado por</p>
+      <p class="dev-name">AnthZz Berrocal _BerMat_Mods</p>
+      <p>Versión más reciente lanzada por BerMatMods</p>
+      <hr style="border:1px solid #e0e0e0; margin:20px 0;">
+      <a href="https://github.com/BerMatMods" target="_blank" class="github-link">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+        Ver más en GitHub
+      </a>
+      <p class="footer-text">Simulación con fines educativos</p>
+      <button class="big-button secondary" style="margin-top:20px; width:100%;" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i> Volver
+      </button>
+    </div>
+
     <!-- Escaneo QR -->
     <div id="scanScreen" class="scan-screen">
       <div class="scan-overlay"></div>
@@ -956,7 +1088,7 @@
     <!-- Chispas -->
     <div class="sparkles" id="sparkles"></div>
 
-    <!-- Footer (solo firma) -->
+    <!-- Footer -->
     <div class="footer">
       <strong>by AnthZz Berrocal _BerMat_Mods</strong>
     </div>
@@ -974,6 +1106,9 @@
       phone: "+51 999 888 777",
       photo: "https://ui-avatars.com/api/?name=AnthZz+Berrocal&background=7b1fa2&color=fff"
     };
+
+    // Historial de movimientos
+    let movements = JSON.parse(localStorage.getItem('yape_movements')) || [];
 
     function toggleMenu() {
       const sidebar = document.getElementById('menuSidebar');
@@ -1006,6 +1141,7 @@
           balance -= parseFloat(amount);
           document.getElementById('balanceAmount').textContent = `S/ ${balance.toFixed(2)}`;
           document.getElementById('menuBalance').textContent = balance.toFixed(2);
+          addMovement('Pago realizado', amount);
         }, 500);
       }, 2500);
     }
@@ -1062,6 +1198,51 @@
       document.getElementById('confirmPhone').textContent = `*** *** ${phone.slice(-3)}`;
       document.getElementById('confirmOp').textContent = Math.floor(Math.random() * 90000000 + 10000000);
       showSparkles();
+
+      // Guardar movimiento
+      addMovement(name, amount);
+    }
+
+    function addMovement(name, amount) {
+      const now = new Date();
+      const date = now.toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }).replace('.', '');
+      const time = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+      const movement = {
+        name: name,
+        amount: amount,
+        date: `${date} ${time}`
+      };
+
+      movements.unshift(movement); // Agregar al inicio
+      localStorage.setItem('yape_movements', JSON.stringify(movements));
+      renderMovements();
+    }
+
+    function renderMovements() {
+      const container = document.getElementById('movementsList');
+      container.innerHTML = '';
+
+      if (movements.length === 0) {
+        container.innerHTML = '<div style="text-align:center; color:#888; padding:20px;">No tienes movimientos aún</div>';
+        return;
+      }
+
+      movements.forEach(mov => {
+        const item = document.createElement('div');
+        item.className = 'movement-item';
+        item.innerHTML = `
+          <div class="movement-icon">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <div class="movement-info">
+            <div class="movement-name">${mov.name}</div>
+            <div class="movement-date">${mov.date}</div>
+          </div>
+          <div class="movement-amount">S/ ${mov.amount}</div>
+        `;
+        container.appendChild(item);
+      });
     }
 
     function goBack() {
@@ -1071,6 +1252,9 @@
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
       document.getElementById(id).style.display = 'block';
+      if (id === 'movementsList') {
+        renderMovements();
+      }
     }
 
     function changePhoto() {
@@ -1136,27 +1320,9 @@
       setTimeout(() => container.style.display = 'none', 3000);
     }
 
-    // Mostrar información de la app
-    function showAppInfo() {
-      const infoHTML = `
-        <div style="text-align: center; padding: 20px; font-family: 'Segoe UI', sans-serif;">
-          <h2 style="color: var(--yape-purple); margin-bottom: 10px;">Yape Fake v2.5</h2>
-          <p style="color: #333; font-size: 1.1em; margin: 10px 0;">Desarrollado por</p>
-          <p style="font-weight: 600; font-size: 1.2em; color: var(--yape-green);">AnthZz Berrocal _BerMat_Mods</p>
-          <p style="color: #666; margin: 15px 0;">Versión más reciente lanzada por BerMatMods</p>
-          <hr style="border: 1px solid #e0e0e0; margin: 20px 0;">
-          <div style="margin: 20px 0;">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="40" style="vertical-align: middle; margin-right: 10px;">
-            <a href="https://github.com/BerMatMods" target="_blank" style="color: var(--yape-purple); text-decoration: none; font-weight: 600;">Ver más en GitHub</a>
-          </div>
-          <p style="color: #888; font-size: 0.9em; margin-top: 20px;">Simulación con fines educativos</p>
-        </div>
-      `;
-      alert(infoHTML);
-    }
-
     window.addEventListener('load', () => {
       showScreen('home');
+      renderMovements(); // Cargar historial al iniciar
     });
   </script>
 </body>
