@@ -73,7 +73,7 @@
       color: white;
     }
 
-    /* ===== HEADER OCULTO en recibo ===== */
+    /* ===== OCULTAR HEADER en recibo ===== */
     #confirmContainer .top-bar {
       display: none !important;
     }
@@ -458,24 +458,25 @@
       position: relative;
     }
 
-    /* Iconos en esquinas */
-    .confirm-header-icons {
+    /* ✅ ICONOS FUERA DEL RECIBO (esquinas de la pantalla) */
+    .global-icons {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 20px;
       width: 100%;
       display: flex;
       justify-content: space-between;
-      padding: 10px 16px;
+      padding: 0 16px;
       z-index: 10;
+      pointer-events: none; /* Permite que los botones sigan siendo clickeables */
     }
 
-    .confirm-header-icons .check {
+    .global-icons .check {
       color: var(--yape-green);
       font-size: 1.8em;
+      pointer-events: auto;
     }
 
-    .confirm-header-icons .close {
+    .global-icons .close {
       color: white;
       font-size: 1.5em;
       background: rgba(0,0,0,0.3);
@@ -485,16 +486,35 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      pointer-events: auto;
       cursor: pointer;
     }
 
+    /* ✅ RECIBO CON BOTÓN DE COMPARTIR DENTRO */
     .confirm-screen {
       background: var(--white);
       border-radius: 20px;
       padding: 16px;
       box-shadow: var(--shadow);
       font-family: 'Segoe UI', sans-serif;
-      margin-top: 40px;
+      position: relative;
+    }
+
+    .share-inside {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #f0f0f0;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yape-purple);
+      font-size: 1.2em;
+      cursor: pointer;
     }
 
     .confirm-title {
@@ -1020,9 +1040,9 @@
 
     <!-- Contenedor: Recibo + Anuncio -->
     <div id="confirmContainer" class="screen confirm-container">
-      <!-- Iconos en esquinas -->
-      <div class="confirm-header-icons">
-        <i class="fas fa-check check"></i>
+      <!-- ✅ Iconos globales (fuera del recibo) -->
+      <div class="global-icons">
+        <i class="fas fa-check check" onclick="alert('Confirmado')"></i>
         <div class="close" onclick="goBack()">
           <i class="fas fa-times"></i>
         </div>
@@ -1030,6 +1050,11 @@
 
       <!-- Recibo de pago -->
       <div class="confirm-screen">
+        <!-- ✅ Botón de compartir DENTRO del recibo -->
+        <button class="share-inside" onclick="alert('Compartir recibo')">
+          <i class="fas fa-share-alt"></i>
+        </button>
+
         <div class="confirm-title">¡Yapeaste!</div>
         <div class="confirm-amount">S/ <span id="confirmAmount">1</span></div>
         <div class="confirm-name"><span id="confirmName">AnthZz Berrocal</span></div>
@@ -1372,7 +1397,7 @@
 
     window.addEventListener('load', () => {
       showScreen('home');
-      renderMovements(); // Cargar historial al iniciar
+      renderMovements();
     });
   </script>
 </body>
