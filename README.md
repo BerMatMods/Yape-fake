@@ -73,8 +73,9 @@
       color: white;
     }
 
-    /* ===== OCULTAR HEADER en recibo ===== */
-    #confirmContainer .top-bar {
+    /* ===== OCULTAR HEADER y MENÚ en recibo ===== */
+    #confirmContainer .top-bar,
+    #confirmContainer .menu-toggle {
       display: none !important;
     }
 
@@ -458,25 +459,26 @@
       position: relative;
     }
 
-    /* ✅ ICONOS FUERA DEL RECIBO (esquinas de la pantalla) */
-    .global-icons {
+    /* ✅ ICONOS GLOBALES (✓ y X) - más arriba, fuera del recibo */
+    .global-icons-top {
       position: absolute;
-      top: 20px;
+      top: 15px;
+      left: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
       padding: 0 16px;
       z-index: 10;
-      pointer-events: none; /* Permite que los botones sigan siendo clickeables */
+      pointer-events: none;
     }
 
-    .global-icons .check {
+    .global-icons-top .check {
       color: var(--yape-green);
       font-size: 1.8em;
       pointer-events: auto;
     }
 
-    .global-icons .close {
+    .global-icons-top .close {
       color: white;
       font-size: 1.5em;
       background: rgba(0,0,0,0.3);
@@ -1040,8 +1042,8 @@
 
     <!-- Contenedor: Recibo + Anuncio -->
     <div id="confirmContainer" class="screen confirm-container">
-      <!-- ✅ Iconos globales (fuera del recibo) -->
-      <div class="global-icons">
+      <!-- ✅ Iconos globales más arriba (fuera del recibo) -->
+      <div class="global-icons-top">
         <i class="fas fa-check check" onclick="alert('Confirmado')"></i>
         <div class="close" onclick="goBack()">
           <i class="fas fa-times"></i>
