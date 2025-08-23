@@ -789,7 +789,7 @@
         <i class="fas fa-hand-holding-usd"></i>
         <div>
           <div class="label">Créditos</div>
-          <div class="desc">S/ 800 disponibles</div>
+          <div class="desc">S/ 8000 disponibles</div>
         </div>
       </div>
 
@@ -867,7 +867,7 @@
     <!-- Header -->
     <div class="top-bar">
       <i class="fas fa-user"></i>
-      <h1 id="greeting">Hola, Antonio</h1>
+      <h1 id="greeting">Hola, AnthZz</h1>
       <span class="status">Gratis</span>
       <div class="icons">
         <i class="fas fa-headset"></i>
@@ -983,7 +983,7 @@
       <div class="balance-card">
         <div class="balance-toggle" onclick="toggleBalance()">
           <span>Ocultar saldo</span>
-          <span id="balanceAmount">S/ 27.00</span>
+          <span id="balanceAmount">S/ 2866</span>
         </div>
       </div>
 
@@ -1125,7 +1125,7 @@
         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
         Ver más en GitHub
       </a>
-      <p class="footer-text">Simulación con fines educativos</p>
+      <p class="footer-text">Somos legión no olvides,Esperanos</p>
       <button class="big-button secondary" style="margin-top:20px; width:100%;" onclick="goBack()">
         <i class="fas fa-arrow-left"></i> Volver
       </button>
@@ -1155,7 +1155,7 @@
   <script>
     let balance = 27.00;
     let balanceVisible = false;
-    let userName = "Antonio";
+    let userName = "AnthZz";
     let userProfile = {
       name: "AnthZz Berrocal",
       nickname: "_BerMat_Mods",
