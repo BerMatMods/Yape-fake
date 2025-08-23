@@ -4,18 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Yape</title>
-  <!-- Corregido: espacio extra eliminado -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --primary: #9c27b0;
-      --primary-light: #f3e5f5;
+      --purple: #7b1fa2;
+      --turquoise: #00c853;
       --white: #ffffff;
-      --bg: #f5f5f5;
       --text: #333333;
-      --text-secondary: #5f5f5f;
+      --text-secondary: #666666;
       --border: #e0e0e0;
-      --shadow: 0 1px 6px rgba(0,0,0,0.1);
+      --shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     * {
@@ -26,19 +24,16 @@
     }
 
     body {
-      background-color: var(--bg);
+      background-color: var(--purple);
       color: var(--text);
-      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     .container {
       max-width: 414px;
       margin: 0 auto;
-      background: var(--white);
       min-height: 100vh;
       position: relative;
-      box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
     /* Header */
@@ -46,344 +41,247 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 16px;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 20px 16px;
+      color: white;
     }
 
     .top-bar h1 {
-      font-size: 1.55em;
-      color: var(--primary);
-      font-weight: 700;
+      font-size: 1.5em;
+      margin: 0;
+    }
+
+    .top-bar .status {
+      font-size: 0.8em;
+      background: #fbbd00;
+      color: black;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-weight: bold;
     }
 
     .top-bar .icons {
       display: flex;
       gap: 20px;
-      position: relative;
     }
 
-    .top-bar .notification-dot {
-      position: absolute;
-      top: 12px;
-      right: 8px;
-      width: 8px;
-      height: 8px;
-      background: red;
-      border-radius: 50%;
-    }
-
-    /* Saldo */
-    .balance-section {
-      text-align: center;
-      padding: 30px 20px 24px;
-      background: var(--primary);
+    .top-bar .icons i {
+      font-size: 1.5em;
       color: white;
-    }
-
-    .balance-label {
-      font-size: 0.9em;
-      opacity: 0.9;
-    }
-
-    .balance-amount {
-      font-size: 3.1em;
-      font-weight: bold;
-      margin: 10px 0;
-      letter-spacing: -1px;
-    }
-
-    .show-hide {
-      font-size: 0.95em;
-      opacity: 0.95;
-      cursor: pointer;
-      text-decoration: underline;
     }
 
     /* Servicios */
-    .quick-services {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 14px 10px 12px;
-      gap: 14px;
-      justify-content: center;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding: 20px;
     }
 
     .service-item {
-      width: 72px;
       text-align: center;
-      font-size: 0.82em;
-      color: var(--text-secondary);
+      color: white;
+      font-size: 0.85em;
     }
 
     .service-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--primary-light);
-      border-radius: 14px;
-      margin: 0 auto 7px;
+      width: 70px;
+      height: 70px;
+      background: white;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary);
-      font-size: 1.35em;
+      margin: 0 auto 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* Botones */
+    .service-icon i {
+      font-size: 1.5em;
+      color: var(--purple);
+    }
+
+    /* Card: Saldo */
+    .balance-card {
+      background: var(--white);
+      border-radius: 20px;
+      margin: 20px 20px 15px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .balance-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--purple);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+
+    .balance-toggle span {
+      color: white;
+      font-weight: 600;
+    }
+
+    .balance-amount {
+      font-size: 2.2em;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    /* Movimientos */
+    .movements-toggle {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      margin: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .movements-toggle span {
+      color: var(--purple);
+      font-weight: 600;
+    }
+
+    .movements-toggle i {
+      color: var(--purple);
+    }
+
+    /* Banner promocional */
+    .promo-banner {
+      margin: 20px 20px 15px;
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .promo-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Botones grandes */
     .big-button {
-      margin: 16px 20px 10px;
-      background: var(--primary);
+      margin: 20px 20px 0;
+      background: var(--turquoise);
       color: white;
       border: none;
       padding: 16px;
-      border-radius: 13px;
-      font-size: 1.12em;
+      border-radius: 12px;
+      font-size: 1.1em;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(0,200,83,0.3);
     }
 
     .big-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(156, 39, 176, 0.4);
+      box-shadow: 0 6px 16px rgba(0,200,83,0.4);
     }
 
     .big-button.secondary {
+      background: transparent;
+      border: 2px solid var(--turquoise);
+      color: var(--turquoise);
+    }
+
+    .big-button.secondary:hover {
+      background: rgba(0,200,83,0.1);
+    }
+
+    /* Transacción */
+    .transaction-card {
       background: var(--white);
-      color: var(--primary);
-      border: 1.5px solid var(--primary);
+      border-radius: 20px;
+      margin: 20px 20px 15px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      display: none; /* Oculto por defecto */
     }
 
-    /* Movimientos */
-    .movements {
-      padding: 16px;
+    .transaction-title {
+      font-size: 1.4em;
+      color: var(--purple);
+      margin-bottom: 12px;
     }
 
-    .movement-item {
-      display: flex;
-      padding: 14px 0;
-      border-bottom: 1px solid #f0f0f0;
+    .transaction-amount {
+      font-size: 3.5em;
+      font-weight: bold;
+      margin: 10px 0;
     }
 
-    .movement-icon {
-      width: 44px;
-      height: 44px;
-      background: var(--primary-light);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      margin-right: 14px;
-    }
-
-    .movement-info {
-      flex: 1;
-    }
-
-    .movement-title {
-      font-weight: 600;
-      font-size: 0.98em;
-    }
-
-    .movement-date {
-      font-size: 0.83em;
-      color: #888;
-    }
-
-    .movement-amount {
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    /* Formulario */
-    .form-group {
-      margin: 15px 0;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text-secondary);
-      font-size: 0.9em;
-    }
-
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-size: 1em;
-    }
-
-    /* Ajustes */
-    .setting-item {
-      padding: 15px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .setting-item i {
-      color: var(--primary);
+    .transaction-name {
       font-size: 1.3em;
+      font-weight: 600;
+      margin: 10px 0;
     }
 
-    .setting-text {
-      flex: 1;
-    }
-
-    .setting-label {
-      font-weight: 500;
-    }
-
-    .setting-desc {
-      font-size: 0.8em;
-      color: #888;
-    }
-
-    /* Perfil */
-    .profile-header {
-      text-align: center;
+    .transaction-date {
+      font-size: 0.9em;
+      color: var(--text-secondary);
       margin-bottom: 20px;
     }
 
-    .profile-pic {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 20px auto 10px;
-      background: #ddd;
-      background-size: cover;
-      background-position: center;
-      cursor: pointer;
-      border: 3px solid var(--primary);
-    }
-
-    /* Pantallas */
-    .screen {
-      display: none;
-      padding-bottom: 80px;
-    }
-
-    .screen.active {
-      display: block;
-    }
-
-    /* Animaciones */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pop {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
-
-    .pop {
-      animation: pop 0.3s ease-in-out;
-    }
-
-    .sparkles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 1001;
-      display: none;
-    }
-
-    .spark {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #fff;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: fall linear forwards;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-20px); opacity: 1; }
-      100% { transform: translateY(100vh); opacity: 0; }
-    }
-
-    /* Escaneo */
-    .scan-screen {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      z-index: 1000;
-      justify-content: center;
+    .security-code {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      margin: 15px 0;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
     }
 
-    .scan-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
+    .security-code span {
+      font-size: 0.9em;
+      color: var(--text-secondary);
     }
 
-    .scan-frame {
-      width: 290px;
-      height: 290px;
-      border: 3px solid #00ff00;
-      border-radius: 18px;
-      position: relative;
-      z-index: 2;
-      overflow: hidden;
-      box-shadow: 0 0 25px rgba(0,255,0,0.5);
+    .security-code i {
+      color: var(--turquoise);
+      font-size: 1.2em;
     }
 
-    .scan-line {
-      width: 100%;
-      height: 5px;
-      background: #00ff00;
-      position: absolute;
-      top: 0;
-      animation: scanLine 1.6s ease-in-out infinite;
-      box-shadow: 0 0 15px #00ff00;
+    .security-digits {
+      display: flex;
+      gap: 10px;
     }
 
-    @keyframes scanLine {
-      0% { top: 0; }
-      100% { top: 285px; }
-    }
-
-    .scan-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: white;
-      color: black;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+    .digit {
+      width: 40px;
+      height: 40px;
+      background: #f0f0f0;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 3;
-      cursor: pointer;
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .transaction-details {
+      margin-top: 20px;
+      font-size: 0.95em;
+      color: var(--text-secondary);
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
     }
 
     /* Footer */
@@ -401,225 +299,180 @@
 
     <!-- Header -->
     <div class="top-bar">
-      <h1>Yape</h1>
+      <i class="fas fa-user"></i>
+      <h1>Hola, Antonio</h1>
+      <span class="status">Gratis</span>
       <div class="icons">
+        <i class="fas fa-headset"></i>
         <i class="fas fa-bell"></i>
-        <div class="notification-dot"></div>
       </div>
     </div>
 
     <!-- Pantalla: Inicio -->
     <div id="home" class="screen active">
-      <div class="balance-section">
-        <div class="balance-label">Saldo disponible</div>
-        <div class="balance-amount" id="balanceAmount">S/ 3,500.00</div>
-        <div class="show-hide" onclick="toggleBalance()">●●●●●●</div>
-      </div>
-
-      <div class="quick-services">
+      <div class="services-grid">
         <div class="service-item" onclick="startScan()">
-          <div class="service-icon"><i class="fas fa-qrcode"></i></div>
-          <div>Yapear</div>
-        </div>
-        <div class="service-item" onclick="alert('Recarga de celular')">
           <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div>Recarga</div>
+          <div>Recargar celular</div>
         </div>
-        <div class="service-item" onclick="alert('Pagar servicio')">
+        <div class="service-item" onclick="alert('Yapear servicios')">
           <div class="service-icon"><i class="fas fa-bolt"></i></div>
-          <div>Yapear servicio</div>
+          <div>Yapear servicios</div>
         </div>
-        <div class="service-item" onclick="alert('Transferir a primos')">
-          <div class="service-icon"><i class="fas fa-users"></i></div>
-          <div>Primos</div>
+        <div class="service-item" onclick="alert('Promos')">
+          <div class="service-icon"><i class="fas fa-percent"></i></div>
+          <div>Promos</div>
         </div>
-        <div class="service-item" onclick="showScreen('settings')">
-          <div class="service-icon"><i class="fas fa-cog"></i></div>
-          <div>Ajustes</div>
+        <div class="service-item" onclick="alert('Aprobar compras')">
+          <div class="service-icon"><i class="fas fa-lock"></i></div>
+          <div>Aprobar compras</div>
         </div>
-        <div class="service-item" onclick="alert('Ver tiendas cercanas')">
+        <div class="service-item" onclick="alert('Créditos')">
+          <div class="service-icon"><i class="fas fa-wallet"></i></div>
+          <div>Créditos</div>
+        </div>
+        <div class="service-item" onclick="alert('Tienda')">
           <div class="service-icon"><i class="fas fa-store"></i></div>
-          <div>Tiendas</div>
+          <div>Tienda</div>
         </div>
-        <div class="service-item" onclick="alert('Comprar dólares')">
+        <div class="service-item" onclick="alert('Dólares')">
           <div class="service-icon"><i class="fas fa-dollar-sign"></i></div>
           <div>Dólares</div>
         </div>
-        <div class="service-item" onclick="alert('Enviar remesas')">
+        <div class="service-item" onclick="alert('Remesas')">
           <div class="service-icon"><i class="fas fa-globe-americas"></i></div>
           <div>Remesas</div>
         </div>
-        <div class="service-item" onclick="alert('Pagar SOAT')">
-          <div class="service-icon"><i class="fas fa-car"></i></div>
+        <div class="service-item" onclick="alert('SOAT')">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
           <div>SOAT</div>
         </div>
-        <div class="service-item" onclick="alert('Comprar pasaje')">
+        <div class="service-item" onclick="alert('Viajar en bus')">
           <div class="service-icon"><i class="fas fa-bus"></i></div>
-          <div>Bus</div>
+          <div>Viajar en bus</div>
         </div>
-        <div class="service-item" onclick="alert('Configurar biométrica')">
+        <div class="service-item" onclick="showScreen('settings')">
           <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
           <div>Biométrica</div>
         </div>
-        <div class="service-item" onclick="alert('Ver todos los servicios')">
-          <div class="service-icon"><i class="fas fa-ellipsis-h"></i></div>
+        <div class="service-item" onclick="alert('Ver todo')">
+          <div class="service-icon"><i class="fas fa-plus"></i></div>
           <div>Ver todo</div>
         </div>
       </div>
 
-      <button class="big-button pop" onclick="startScan()">
-        <i class="fas fa-qrcode"></i> Yapear con QR
-      </button>
-      <button class="big-button secondary" onclick="showScreen('sendByNumber')">
-        <i class="fas fa-mobile-alt"></i> Yapear por número
-      </button>
+      <div class="balance-card">
+        <div class="balance-toggle" onclick="toggleBalance()">
+          <span>Ocultar saldo</span>
+          <span>S/ 27.00</span>
+        </div>
+      </div>
 
-      <div class="movements">
-        <h3 style="margin-bottom:16px; color:var(--text-secondary);">Historial de movimientos</h3>
-        <div id="movementsList">
-          <!-- Movimientos dinámicos -->
-          <div class="movement-item">
-            <div class="movement-icon"><i class="fas fa-arrow-down"></i></div>
-            <div class="movement-info">
-              <div class="movement-title">Saldo inicial</div>
-              <div class="movement-date">Hoy, 00:00</div>
-            </div>
-            <div class="movement-amount" style="color:var(--primary);">+S/ 800.00</div>
+      <div class="movements-toggle" onclick="showScreen('movementsList')">
+        <span>Mostrar movimientos</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="promo-banner">
+        <img src="https://via.placeholder.com/360x180?text=iPhone+16e+-+Solo+para+ti" alt="Promoción">
+      </div>
+
+      <button class="big-button secondary" onclick="startScan()">
+        <i class="fas fa-qrcode"></i> ESCANEAR QR
+      </button>
+      <button class="big-button" onclick="yapearPorNumero()">
+        <i class="fas fa-paper-plane"></i> YAPEAR
+      </button>
+    </div>
+
+    <!-- Pantalla: Transacción -->
+    <div id="transaction" class="screen" style="display:none;">
+      <div class="transaction-card">
+        <div class="transaction-title">¡Yapeaste!</div>
+        <div class="transaction-amount">S/ 1</div>
+        <div class="transaction-name">Cintia Bernaola B.</div>
+        <div class="transaction-date">
+          <i class="fas fa-calendar"></i> 22 ago. 2025 | <i class="fas fa-clock"></i> 10:35 p.m.
+        </div>
+
+        <div class="security-code">
+          <span>CÓDIGO DE SEGURIDAD</span>
+          <i class="fas fa-info-circle"></i>
+          <div class="security-digits">
+            <div class="digit">4</div>
+            <div class="digit">6</div>
+            <div class="digit">4</div>
+          </div>
+        </div>
+
+        <div class="transaction-details">
+          <div class="detail-row">
+            <span>Nro. de celular</span>
+            <span>*** *** 777</span>
+          </div>
+          <div class="detail-row">
+            <span>Destino</span>
+            <span>Yape</span>
+          </div>
+          <div class="detail-row">
+            <span>Nro. de operación</span>
+            <span>25422464</span>
           </div>
         </div>
       </div>
+
+      <div class="promo-banner">
+        <img src="https://via.placeholder.com/360x180?text=iPhone+16e+-+Solo+para+ti" alt="Promoción">
+      </div>
+
+      <button class="big-button secondary" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i> Volver
+      </button>
     </div>
 
-    <!-- Pantalla: Enviar por número -->
-    <div id="sendByNumber" class="screen">
-      <h2 style="margin:22px 0; color:var(--primary);">Yapear por número</h2>
-      <div class="form-group">
-        <label>Número de celular</label>
-        <input type="tel" id="phoneNumber" placeholder="987 654 321">
-      </div>
-      <div class="form-group">
-        <label>Monto (S/)</label>
-        <input type="number" id="sendAmount" placeholder="0.00">
-      </div>
-      <button class="big-button" onclick="sendByNumber()">Enviar Dinero</button>
-      <button class="big-button secondary" style="margin-top:12px;" onclick="showScreen('home')">← Volver</button>
+    <!-- Pantallas ocultas (mantenemos tu lógica) -->
+    <div id="sendByNumber" class="screen" style="display:none;">
+      <input type="tel" id="phoneNumber">
+      <input type="number" id="sendAmount">
     </div>
 
-    <!-- Pantalla: Ajustes -->
-    <div id="settings" class="screen">
-      <h2 style="margin:20px 16px; color:var(--primary);">Ajustes</h2>
-
-      <div class="setting-item" onclick="showScreen('profile')">
-        <i class="fas fa-user"></i>
-        <div class="setting-text">
-          <div class="setting-label">Perfil</div>
-          <div class="setting-desc">Editar información personal</div>
-        </div>
-      </div>
-
-      <div class="setting-item" onclick="showScreen('editBalance')">
-        <i class="fas fa-wallet"></i>
-        <div class="setting-text">
-          <div class="setting-label">Editar Saldo</div>
-          <div class="setting-desc">Modificar tu saldo disponible</div>
-        </div>
-      </div>
-
-      <div class="setting-item">
-        <i class="fas fa-bell"></i>
-        <div class="setting-text">
-          <div class="setting-label">Notificaciones</div>
-          <div class="setting-desc">Activadas</div>
-        </div>
-        <i class="fas fa-toggle-on" style="color:var(--primary);"></i>
-      </div>
-
-      <div class="setting-item">
-        <i class="fas fa-shield-alt"></i>
-        <div class="setting-text">
-          <div class="setting-label">Seguridad</div>
-          <div class="setting-desc">PIN, huella, facial</div>
-        </div>
-      </div>
-
-      <div class="setting-item">
-        <i class="fas fa-info-circle"></i>
-        <div class="setting-text">
-          <div class="setting-label">Información de la app</div>
-          <div class="setting-desc">Yape Fake v2.5 - By: BerMatMods</div>
-        </div>
-      </div>
-
-      <button class="big-button secondary" style="margin:20px;" onclick="showScreen('home')">← Volver</button>
+    <div id="settings" class="screen" style="display:none;">
+      <h2>Ajustes</h2>
     </div>
 
-    <!-- Pantalla: Perfil -->
-    <div id="profile" class="screen">
-      <div class="profile-header">
-        <!-- Corregido: espacio eliminado en URL -->
-        <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&background=9c27b0&color=fff" alt="Foto" class="profile-pic" id="profilePic" onclick="changePhoto()">
-        <h2>AnthZz Berrocal</h2>
-        <p>_BerMat_Mods</p>
-      </div>
-
-      <div class="form-group">
-        <label>Nombre completo</label>
-        <input type="text" id="editName" value="AnthZz Berrocal">
-      </div>
-      <div class="form-group">
-        <label>Apodo</label>
-        <input type="text" id="editNickname" value="_BerMat_Mods">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" id="editEmail" value="anthzz@bermatmods.dev">
-      </div>
-      <div class="form-group">
-        <label>Teléfono</label>
-        <input type="tel" id="editPhone" value="+51 999 888 777">
-      </div>
-      <button class="big-button" onclick="saveProfile()">Guardar Cambios</button>
-      <button class="big-button secondary" style="margin-top:10px;" onclick="showScreen('settings')">← Ajustes</button>
+    <div id="profile" class="screen" style="display:none;">
+      <h2>Perfil</h2>
     </div>
 
-    <!-- Pantalla: Editar Saldo -->
-    <div id="editBalance" class="screen">
-      <h2 style="margin:20px 16px; color:var(--primary);">Editar Saldo</h2>
-      <div class="form-group">
-        <label>Saldo actual (S/)</label>
-        <input type="number" id="editBalanceInput" value="3500.00">
-      </div>
-      <button class="big-button" onclick="saveBalance()">Guardar Saldo</button>
-      <button class="big-button secondary" style="margin-top:10px;" onclick="showScreen('settings')">← Ajustes</button>
+    <div id="editBalance" class="screen" style="display:none;">
+      <h2>Editar Saldo</h2>
     </div>
 
-    <!-- Escaneo -->
-    <div id="scanScreen" class="scan-screen">
-      <div class="scan-overlay"></div>
-      <div class="scan-frame">
-        <div class="scan-line"></div>
-      </div>
-      <div class="scan-close" onclick="closeScan()">
+    <!-- Escaneo QR -->
+    <div id="scanScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; justify-content:center; align-items:center; z-index:1000;">
+      <div style="width:290px; height:290px; border:3px solid #00ff00; border-radius:18px;"></div>
+      <div style="position:absolute; top:20px; right:20px; background:white; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="document.getElementById('scanScreen').style.display='none';">
         <i class="fas fa-times"></i>
       </div>
     </div>
 
     <!-- Chispas -->
-    <div class="sparkles" id="sparkles"></div>
+    <div class="sparkles" id="sparkles" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1001; display:none;"></div>
 
     <!-- Footer -->
     <div class="footer">
-      BerMatMods<br>
+      Simulación con fines educativos<br>
       <strong>by AnthZz Berrocal</strong>
     </div>
 
   </div>
 
+  <!-- Mantenemos TODO tu JavaScript original -->
   <script>
-    let balance = 3500.00;
+    let balance = 27.00;
     let balanceVisible = false;
     let movements = [
-      { icon: 'arrow-down', title: 'Saldo inicial', amount: '+S/ 3,500.00', date: 'Hoy, 00:00' }
+      { icon: 'arrow-down', title: 'Saldo inicial', amount: '+S/ 27.00', date: 'Hoy, 00:00' }
     ];
 
     function toggleBalance() {
@@ -657,6 +510,33 @@
 
     function closeScan() {
       document.getElementById('scanScreen').style.display = 'none';
+    }
+
+    function yapearPorNumero() {
+      const phone = prompt("Ingresa número de celular");
+      const amount = prompt("Ingresa monto");
+      if (!phone || !amount || amount <= 0) {
+        alert("Datos inválidos");
+        return;
+      }
+      showTransaction(phone, amount);
+    }
+
+    function showTransaction(phone, amount) {
+      showScreen('transaction');
+      document.querySelector('.transaction-amount').textContent = `S/ ${amount}`;
+      document.querySelector('.transaction-name').textContent = `Cintia Bernaola B.`;
+      document.querySelector('.transaction-date').innerHTML = `<i class="fas fa-calendar"></i> 22 ago. 2025 | <i class="fas fa-clock"></i> 10:35 p.m.`;
+      document.querySelector('.security-digits').innerHTML = `
+        <div class="digit">${Math.floor(Math.random() * 10)}</div>
+        <div class="digit">${Math.floor(Math.random() * 10)}</div>
+        <div class="digit">${Math.floor(Math.random() * 10)}</div>
+      `;
+      document.querySelector('.detail-row:nth-child(1) span:nth-child(2)').textContent = `*** *** ${phone.slice(-3)}`;
+    }
+
+    function goBack() {
+      showScreen('home');
     }
 
     function sendByNumber() {
@@ -719,7 +599,6 @@
     function renderMovements() {
       const container = document.getElementById('movementsList');
       container.innerHTML = '';
-      // Más reciente arriba
       movements.slice().reverse().forEach(m => {
         const item = document.createElement('div');
         item.className = 'movement-item';
@@ -763,7 +642,6 @@
       setTimeout(() => container.style.display = 'none', 3000);
     }
 
-    // Iniciar
     window.addEventListener('load', () => {
       showScreen('home');
       renderMovements();
