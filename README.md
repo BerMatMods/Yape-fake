@@ -73,6 +73,11 @@
       color: white;
     }
 
+    /* ===== HEADER OCULTO en recibo ===== */
+    #confirmContainer .top-bar {
+      display: none !important;
+    }
+
     /* ===== MENÚ HAMBURGUESA ===== */
     .menu-toggle {
       position: absolute;
@@ -450,6 +455,37 @@
     .confirm-container {
       display: none;
       margin: 20px 20px 15px;
+      position: relative;
+    }
+
+    /* Iconos en esquinas */
+    .confirm-header-icons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 16px;
+      z-index: 10;
+    }
+
+    .confirm-header-icons .check {
+      color: var(--yape-green);
+      font-size: 1.8em;
+    }
+
+    .confirm-header-icons .close {
+      color: white;
+      font-size: 1.5em;
+      background: rgba(0,0,0,0.3);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     .confirm-screen {
@@ -458,13 +494,7 @@
       padding: 16px;
       box-shadow: var(--shadow);
       font-family: 'Segoe UI', sans-serif;
-    }
-
-    .confirm-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
+      margin-top: 40px; /* espacio para los iconos */
     }
 
     .confirm-title {
@@ -472,20 +502,6 @@
       color: var(--yape-purple);
       font-weight: bold;
       margin: 0;
-    }
-
-    .share-btn {
-      background: #f0f0f0;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--yape-purple);
-      font-size: 1.2em;
-      cursor: pointer;
     }
 
     .confirm-amount {
@@ -992,7 +1008,7 @@
       <div class="send-title">¿A quién vas a yapear?</div>
       <input type="tel" id="sendPhone" placeholder="987 654 321" class="send-input">
       <div class="send-title">Nombre del destinatario</div>
-      <input type="text" id="sendName" placeholder="Cintia Bernaola B." value="Cintia Bernaola B." class="send-input">
+      <input type="text" id="sendName" placeholder="BerMatMods." value="BerMatMods." class="send-input">
       <div class="send-title">¿Cuánto?</div>
       <div class="send-amount">S/ <span id="sendAmount">0.00</span></div>
       <input type="number" id="amountInput" placeholder="0.00" class="send-input" oninput="updateAmount(this.value)">
@@ -1004,16 +1020,19 @@
 
     <!-- Contenedor: Recibo + Anuncio -->
     <div id="confirmContainer" class="screen confirm-container">
+      <!-- Iconos en esquinas -->
+      <div class="confirm-header-icons">
+        <i class="fas fa-check check"></i>
+        <div class="close" onclick="goBack()">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+
       <!-- Recibo de pago -->
       <div class="confirm-screen">
-        <div class="confirm-header">
-          <h2 class="confirm-title">¡Yapeaste!</h2>
-          <button class="share-btn" onclick="alert('Compartir recibo')">
-            <i class="fas fa-share-alt"></i>
-          </button>
-        </div>
+        <div class="confirm-title">¡Yapeaste!</div>
         <div class="confirm-amount">S/ <span id="confirmAmount">1</span></div>
-        <div class="confirm-name"><span id="confirmName">Cintia Bernaola B.</span></div>
+        <div class="confirm-name"><span id="confirmName">BerMatMods.</span></div>
         <div class="confirm-date">
           <i class="fas fa-calendar"></i> <span id="confirmDate">22 ago. 2025</span> | <i class="fas fa-clock"></i> <span id="confirmTime">10:35 p.m.</span>
         </div>
@@ -1048,11 +1067,6 @@
       <div class="promo-banner-bottom">
         <img src="https://i.postimg.cc/FRNhhv8k/1755961471955.jpg" alt="iPhone 16e">
       </div>
-
-      <!-- Botón para volver -->
-      <button class="big-button secondary" onclick="goBack()">
-        <i class="fas fa-arrow-left"></i> Volver
-      </button>
     </div>
 
     <!-- Pantalla: Perfil -->
@@ -1065,7 +1079,7 @@
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Apodo</label>
-        <input type="text" id="editNickname" value="_BerMat_Mods" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="text" id="editNickname" value="𝑩𝒆𝒓𝑴𝒂𝒕-𝑴𝒐𝒅𝒔" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Email</label>
@@ -1084,7 +1098,7 @@
       <h2 style="color:var(--yape-purple); margin:20px 0;">Editar Saldo</h2>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Saldo actual (S/)</label>
-        <input type="number" id="editBalanceInput" value="27.00" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="number" id="editBalanceInput" value="900.00" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
       </div>
       <button class="big-button" onclick="saveBalance()">Guardar Saldo</button>
       <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
@@ -1101,7 +1115,7 @@
         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
         Ver más en GitHub
       </a>
-      <p class="footer-text">Simulación con fines educativos</p>
+      <p class="footer-text">𝕭𝖊𝖗𝕸𝖆𝖙-𝕸𝖔𝖉𝖘 𝖙𝖚 𝖕𝖊𝖘𝖆𝖉𝖎𝖑𝖑𝖆</p>
       <button class="big-button secondary" style="margin-top:20px; width:100%;" onclick="goBack()">
         <i class="fas fa-arrow-left"></i> Volver
       </button>
@@ -1157,7 +1171,7 @@
         document.querySelector('.balance-toggle span:nth-child(1)').textContent = 'Ocultar saldo';
         balanceVisible = false;
       } else {
-        elem.textContent = '●●●●●●';
+        elem.textContent = .
         document.querySelector('.balance-toggle span:nth-child(1)').textContent = 'Mostrar saldo';
         balanceVisible = true;
       }
@@ -1174,7 +1188,7 @@
           balance -= parseFloat(amount);
           document.getElementById('balanceAmount').textContent = `S/ ${balance.toFixed(2)}`;
           document.getElementById('menuBalance').textContent = balance.toFixed(2);
-          addMovement('Pago realizado', amount);
+          addMovement('Pago realizado', '*** *** 777', amount);
         }, 500);
       }, 2500);
     }
@@ -1207,10 +1221,10 @@
         alert("Ingresa un monto válido");
         return;
       }
-      showConfirm(phone, amount, name);
+      showConfirm(phone, name, amount);
     }
 
-    function showConfirm(phone, amount, name) {
+    function showConfirm(phone, name, amount) {
       showScreen('confirmContainer');
       document.getElementById('confirmAmount').textContent = amount;
       document.getElementById('confirmName').textContent = name;
@@ -1232,22 +1246,25 @@
       document.getElementById('confirmOp').textContent = Math.floor(Math.random() * 90000000 + 10000000);
       showSparkles();
 
-      // Guardar movimiento
-      addMovement(name, amount);
+      // Registrar movimiento completo
+      addMovement(name, phone, amount);
     }
 
-    function addMovement(name, amount) {
+    function addMovement(name, phone, amount) {
       const now = new Date();
       const date = now.toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }).replace('.', '');
       const time = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: true });
+      const operation = Math.floor(Math.random() * 90000000 + 10000000);
 
       const movement = {
         name: name,
+        phone: `*** *** ${phone.slice(-3)}`,
         amount: amount,
-        date: `${date} ${time}`
+        date: `${date} ${time}`,
+        operation: operation
       };
 
-      movements.unshift(movement); // Agregar al inicio
+      movements.unshift(movement);
       localStorage.setItem('yape_movements', JSON.stringify(movements));
       renderMovements();
     }
