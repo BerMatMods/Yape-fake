@@ -455,34 +455,60 @@
     .confirm-screen {
       background: var(--white);
       border-radius: 20px;
-      padding: 20px;
+      padding: 16px;
       box-shadow: var(--shadow);
-      text-align: center;
-      margin-bottom: 15px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .confirm-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
     }
 
     .confirm-title {
-      font-size: 1.4em;
+      font-size: 1.3em;
       color: var(--yape-purple);
-      margin-bottom: 12px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .share-btn {
+      background: #f0f0f0;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--yape-purple);
+      font-size: 1.2em;
+      cursor: pointer;
     }
 
     .confirm-amount {
-      font-size: 3.5em;
+      font-size: 2.8em;
       font-weight: bold;
       margin: 10px 0;
+      text-align: center;
+      color: var(--text);
     }
 
     .confirm-name {
-      font-size: 1.3em;
-      font-weight: 600;
+      font-size: 1.2em;
+      font-weight: bold;
       margin: 10px 0;
+      text-align: center;
+      color: var(--text);
     }
 
     .confirm-date {
       font-size: 0.9em;
       color: var(--text-secondary);
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .security-code {
@@ -497,6 +523,7 @@
     .security-code span {
       font-size: 0.9em;
       color: var(--text-secondary);
+      font-weight: bold;
     }
 
     .security-code i {
@@ -532,6 +559,7 @@
       display: flex;
       justify-content: space-between;
       margin: 10px 0;
+      font-weight: bold;
     }
 
     /* ===== ESCANEO QR ===== */
@@ -978,7 +1006,12 @@
     <div id="confirmContainer" class="screen confirm-container">
       <!-- Recibo de pago -->
       <div class="confirm-screen">
-        <div class="confirm-title">¡Yapeaste!</div>
+        <div class="confirm-header">
+          <h2 class="confirm-title">¡Yapeaste!</h2>
+          <button class="share-btn" onclick="alert('Compartir recibo')">
+            <i class="fas fa-share-alt"></i>
+          </button>
+        </div>
         <div class="confirm-amount">S/ <span id="confirmAmount">1</span></div>
         <div class="confirm-name"><span id="confirmName">Cintia Bernaola B.</span></div>
         <div class="confirm-date">
