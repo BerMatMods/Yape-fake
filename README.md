@@ -118,6 +118,7 @@
       border-radius: 12px;
       margin-bottom: 12px;
       cursor: pointer;
+      transition: all 0.3s ease;
     }
 
     .balance-toggle span {
