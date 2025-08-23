@@ -26,6 +26,7 @@
     body {
       background-color: var(--purple);
       color: var(--text);
+      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
@@ -67,6 +68,95 @@
     .top-bar .icons i {
       font-size: 1.5em;
       color: white;
+    }
+
+    /* Menú hamburguesa */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 16px;
+      font-size: 1.5em;
+      color: white;
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 99;
+      display: none;
+    }
+
+    .menu-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100%;
+      background: var(--white);
+      z-index: 100;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      padding: 80px 16px 20px;
+      overflow-y: auto;
+    }
+
+    .menu-sidebar.active {
+      transform: translateX(0);
+    }
+
+    .menu-header {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .menu-header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+      border: 3px solid var(--purple);
+    }
+
+    .menu-header h3 {
+      color: var(--purple);
+      font-size: 1.2em;
+    }
+
+    .menu-item {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .menu-item:hover {
+      background: #f5f5f5;
+    }
+
+    .menu-item i {
+      color: var(--purple);
+      font-size: 1.3em;
+    }
+
+    .menu-item .label {
+      font-weight: 500;
+    }
+
+    .menu-item .desc {
+      font-size: 0.8em;
+      color: #888;
     }
 
     /* Servicios */
@@ -118,7 +208,6 @@
       border-radius: 12px;
       margin-bottom: 12px;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
     .balance-toggle span {
@@ -210,7 +299,7 @@
       margin: 20px 20px 15px;
       padding: 20px;
       box-shadow: var(--shadow);
-      display: none; /* Oculto por defecto */
+      display: none;
     }
 
     .transaction-title {
@@ -285,6 +374,57 @@
       margin: 10px 0;
     }
 
+    /* Pantallas */
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    /* Animaciones */
+    @keyframes scanLine {
+      0% { top: 0; }
+      100% { top: 285px; }
+    }
+
+    .scan-line {
+      width: 100%;
+      height: 5px;
+      background: #00ff00;
+      position: absolute;
+      top: 0;
+      animation: scanLine 1.6s ease-in-out infinite;
+      box-shadow: 0 0 15px #00ff00;
+    }
+
+    .sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1001;
+      display: none;
+    }
+
+    .spark {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear forwards;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-20px); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+
     /* Footer */
     .footer {
       text-align: center;
@@ -297,6 +437,106 @@
 <body>
 
   <div class="container">
+
+    <!-- Menú hamburguesa -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+
+    <div class="menu-sidebar" id="menuSidebar">
+      <div class="menu-header">
+        <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&background=7b1fa2&color=fff" alt="Perfil" id="menuProfilePic">
+        <h3 id="menuName">AnthZz Berrocal</h3>
+        <p>_BerMat_Mods</p>
+      </div>
+
+      <div class="menu-item" onclick="showScreen('profile')">
+        <i class="fas fa-user"></i>
+        <div>
+          <div class="label">Perfil</div>
+          <div class="desc">Editar información</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="showScreen('editBalance')">
+        <i class="fas fa-wallet"></i>
+        <div>
+          <div class="label">Editar Saldo</div>
+          <div class="desc">S/ <span id="menuBalance">27.00</span></div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Créditos: S/ 800 disponibles')">
+        <i class="fas fa-hand-holding-usd"></i>
+        <div>
+          <div class="label">Créditos</div>
+          <div class="desc">S/ 800 disponibles</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Promociones')">
+        <i class="fas fa-percent"></i>
+        <div>
+          <div class="label">Promociones</div>
+          <div class="desc">Ofertas exclusivas</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Notificaciones')">
+        <i class="fas fa-bell"></i>
+        <div>
+          <div class="label">Notificaciones</div>
+          <div class="desc">Activadas</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Seguridad')">
+        <i class="fas fa-shield-alt"></i>
+        <div>
+          <div class="label">Seguridad</div>
+          <div class="desc">PIN, huella, facial</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Soporte')">
+        <i class="fas fa-headset"></i>
+        <div>
+          <div class="label">Soporte</div>
+          <div class="desc">Chatea con nosotros</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Ayuda')">
+        <i class="fas fa-question-circle"></i>
+        <div>
+          <div class="label">Ayuda</div>
+          <div class="desc">Centro de ayuda</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Términos y condiciones')">
+        <i class="fas fa-file-alt"></i>
+        <div>
+          <div class="label">Términos y condiciones</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Privacidad')">
+        <i class="fas fa-lock"></i>
+        <div>
+          <div class="label">Privacidad</div>
+        </div>
+      </div>
+
+      <div class="menu-item" onclick="alert('Cerrar sesión')">
+        <i class="fas fa-sign-out-alt"></i>
+        <div>
+          <div class="label">Cerrar sesión</div>
+        </div>
+      </div>
+    </div>
 
     <!-- Header -->
     <div class="top-bar">
@@ -352,7 +592,7 @@
           <div class="service-icon"><i class="fas fa-bus"></i></div>
           <div>Viajar en bus</div>
         </div>
-        <div class="service-item" onclick="showScreen('settings')">
+        <div class="service-item" onclick="alert('Biométrica')">
           <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
           <div>Biométrica</div>
         </div>
@@ -365,7 +605,7 @@
       <div class="balance-card">
         <div class="balance-toggle" onclick="toggleBalance()">
           <span>Ocultar saldo</span>
-          <span>S/ 27.00</span>
+          <span id="balanceAmount">S/ 27.00</span>
         </div>
       </div>
 
@@ -390,26 +630,26 @@
     <div id="transaction" class="screen" style="display:none;">
       <div class="transaction-card">
         <div class="transaction-title">¡Yapeaste!</div>
-        <div class="transaction-amount">S/ 1</div>
-        <div class="transaction-name">Cintia Bernaola B.</div>
+        <div class="transaction-amount">S/ <span id="transAmount">1</span></div>
+        <div class="transaction-name"><span id="transName">Cintia Bernaola B.</span></div>
         <div class="transaction-date">
-          <i class="fas fa-calendar"></i> 22 ago. 2025 | <i class="fas fa-clock"></i> 10:35 p.m.
+          <i class="fas fa-calendar"></i> <span id="transDate">22 ago. 2025</span> | <i class="fas fa-clock"></i> <span id="transTime">10:35 p.m.</span>
         </div>
 
         <div class="security-code">
           <span>CÓDIGO DE SEGURIDAD</span>
           <i class="fas fa-info-circle"></i>
           <div class="security-digits">
-            <div class="digit">4</div>
-            <div class="digit">6</div>
-            <div class="digit">4</div>
+            <div class="digit" id="code1">4</div>
+            <div class="digit" id="code2">6</div>
+            <div class="digit" id="code3">4</div>
           </div>
         </div>
 
         <div class="transaction-details">
           <div class="detail-row">
             <span>Nro. de celular</span>
-            <span>*** *** 777</span>
+            <span id="transPhone">*** *** 777</span>
           </div>
           <div class="detail-row">
             <span>Destino</span>
@@ -417,7 +657,7 @@
           </div>
           <div class="detail-row">
             <span>Nro. de operación</span>
-            <span>25422464</span>
+            <span id="transOp">25422464</span>
           </div>
         </div>
       </div>
@@ -431,34 +671,50 @@
       </button>
     </div>
 
-    <!-- Pantallas ocultas (mantenemos tu lógica) -->
-    <div id="sendByNumber" class="screen" style="display:none;">
-      <input type="tel" id="phoneNumber">
-      <input type="number" id="sendAmount">
+    <!-- Pantalla: Perfil -->
+    <div id="profile" class="screen" style="display:none; padding:20px;">
+      <h2 style="color:var(--purple); margin:20px 0;">Editar Perfil</h2>
+      <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&background=7b1fa2&color=fff" alt="Foto" class="profile-pic" id="profilePic" onclick="changePhoto()" style="width:80px; height:80px; border-radius:50%; margin:20px auto; display:block; border:3px solid var(--purple);">
+      <div style="margin:15px 0;">
+        <label style="display:block; margin-bottom:8px; color:white;">Nombre completo</label>
+        <input type="text" id="editName" value="AnthZz Berrocal" style="width:100%; padding:12px; border-radius:8px; border:none; font-size:1em;">
+      </div>
+      <div style="margin:15px 0;">
+        <label style="display:block; margin-bottom:8px; color:white;">Apodo</label>
+        <input type="text" id="editNickname" value="_BerMat_Mods" style="width:100%; padding:12px; border-radius:8px; border:none; font-size:1em;">
+      </div>
+      <div style="margin:15px 0;">
+        <label style="display:block; margin-bottom:8px; color:white;">Email</label>
+        <input type="email" id="editEmail" value="anthzz@bermatmods.dev" style="width:100%; padding:12px; border-radius:8px; border:none; font-size:1em;">
+      </div>
+      <button class="big-button" onclick="saveProfile()">Guardar Cambios</button>
+      <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
     </div>
 
-    <div id="settings" class="screen" style="display:none;">
-      <h2>Ajustes</h2>
-    </div>
-
-    <div id="profile" class="screen" style="display:none;">
-      <h2>Perfil</h2>
-    </div>
-
-    <div id="editBalance" class="screen" style="display:none;">
-      <h2>Editar Saldo</h2>
+    <!-- Pantalla: Editar Saldo -->
+    <div id="editBalance" class="screen" style="display:none; padding:20px;">
+      <h2 style="color:var(--purple); margin:20px 0;">Editar Saldo</h2>
+      <div style="margin:15px 0;">
+        <label style="display:block; margin-bottom:8px; color:white;">Saldo actual (S/)</label>
+        <input type="number" id="editBalanceInput" value="27.00" style="width:100%; padding:12px; border-radius:8px; border:none; font-size:1em;">
+      </div>
+      <button class="big-button" onclick="saveBalance()">Guardar Saldo</button>
+      <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
     </div>
 
     <!-- Escaneo QR -->
     <div id="scanScreen" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; justify-content:center; align-items:center; z-index:1000;">
-      <div style="width:290px; height:290px; border:3px solid #00ff00; border-radius:18px;"></div>
-      <div style="position:absolute; top:20px; right:20px; background:white; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;" onclick="document.getElementById('scanScreen').style.display='none';">
+      <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);"></div>
+      <div style="width:290px; height:290px; border:3px solid #00ff00; border-radius:18px; position:relative; overflow:hidden; z-index:2;">
+        <div class="scan-line"></div>
+      </div>
+      <div style="position:absolute; top:20px; right:20px; background:white; width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:3;" onclick="closeScan()">
         <i class="fas fa-times"></i>
       </div>
     </div>
 
     <!-- Chispas -->
-    <div class="sparkles" id="sparkles" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:1001; display:none;"></div>
+    <div class="sparkles" id="sparkles"></div>
 
     <!-- Footer -->
     <div class="footer">
@@ -468,30 +724,28 @@
 
   </div>
 
-  <!-- Mantenemos TODO tu JavaScript original -->
   <script>
     let balance = 27.00;
     let balanceVisible = false;
-    let movements = [
-      { icon: 'arrow-down', title: 'Saldo inicial', amount: '+S/ 27.00', date: 'Hoy, 00:00' }
-    ];
+
+    function toggleMenu() {
+      const sidebar = document.getElementById('menuSidebar');
+      const overlay = document.getElementById('menuOverlay');
+      sidebar.classList.toggle('active');
+      overlay.style.display = sidebar.classList.contains('active') ? 'block' : 'none';
+    }
 
     function toggleBalance() {
       const elem = document.getElementById('balanceAmount');
       if (balanceVisible) {
         elem.textContent = `S/ ${balance.toFixed(2)}`;
-        document.querySelector('.show-hide').textContent = '●●●●●●';
+        document.querySelector('.balance-toggle span:nth-child(1)').textContent = 'Ocultar saldo';
         balanceVisible = false;
       } else {
         elem.textContent = '●●●●●●';
-        document.querySelector('.show-hide').textContent = 'Mostrar';
+        document.querySelector('.balance-toggle span:nth-child(1)').textContent = 'Mostrar saldo';
         balanceVisible = true;
       }
-    }
-
-    function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
     }
 
     function startScan() {
@@ -505,6 +759,7 @@
           addToHistory('hamburger', 'Pago en comercio', `-S/ ${amount}`);
           balance -= parseFloat(amount);
           document.getElementById('balanceAmount').textContent = `S/ ${balance.toFixed(2)}`;
+          document.getElementById('menuBalance').textContent = balance.toFixed(2);
         }, 500);
       }, 2500);
     }
@@ -515,9 +770,13 @@
 
     function yapearPorNumero() {
       const phone = prompt("Ingresa número de celular");
-      const amount = prompt("Ingresa monto");
-      if (!phone || !amount || amount <= 0) {
-        alert("Datos inválidos");
+      if (!phone || phone.length < 9) {
+        alert("Número inválido");
+        return;
+      }
+      const amount = prompt("Ingresa monto (S/)", "1");
+      if (!amount || amount <= 0) {
+        alert("Monto inválido");
         return;
       }
       showTransaction(phone, amount);
@@ -525,42 +784,38 @@
 
     function showTransaction(phone, amount) {
       showScreen('transaction');
-      document.querySelector('.transaction-amount').textContent = `S/ ${amount}`;
-      document.querySelector('.transaction-name').textContent = `Cintia Bernaola B.`;
-      document.querySelector('.transaction-date').innerHTML = `<i class="fas fa-calendar"></i> 22 ago. 2025 | <i class="fas fa-clock"></i> 10:35 p.m.`;
-      document.querySelector('.security-digits').innerHTML = `
-        <div class="digit">${Math.floor(Math.random() * 10)}</div>
-        <div class="digit">${Math.floor(Math.random() * 10)}</div>
-        <div class="digit">${Math.floor(Math.random() * 10)}</div>
-      `;
-      document.querySelector('.detail-row:nth-child(1) span:nth-child(2)').textContent = `*** *** ${phone.slice(-3)}`;
+      document.getElementById('transAmount').textContent = amount;
+      document.getElementById('transName').textContent = `Cintia Bernaola B.`;
+      const now = new Date();
+      document.getElementById('transDate').textContent = `${now.getDate()} ago. ${now.getFullYear()}`;
+      document.getElementById('transTime').textContent = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')} ${now.getHours() >= 12 ? 'p.m.' : 'a.m.'}`;
+      document.getElementById('code1').textContent = Math.floor(Math.random() * 10);
+      document.getElementById('code2').textContent = Math.floor(Math.random() * 10);
+      document.getElementById('code3').textContent = Math.floor(Math.random() * 10);
+      document.getElementById('transPhone').textContent = `*** *** ${phone.slice(-3)}`;
+      document.getElementById('transOp').textContent = Math.floor(Math.random() * 90000000 + 10000000);
     }
 
     function goBack() {
       showScreen('home');
     }
 
-    function sendByNumber() {
-      const phone = document.getElementById('phoneNumber').value;
-      const amount = document.getElementById('sendAmount').value;
-      if (!phone || phone.length < 9) {
-        alert('Número inválido');
-        return;
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function changePhoto() {
+      const url = prompt('Ingresa URL de foto (o deja vacío para avatar)', '');
+      if (url && url.trim() !== '') {
+        document.getElementById('profilePic').src = url.trim();
+        document.getElementById('menuProfilePic').src = url.trim();
+      } else {
+        const name = document.getElementById('editName').value || 'AnthZz Berrocal';
+        const avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7b1fa2&color=fff`;
+        document.getElementById('profilePic').src = avatar;
+        document.getElementById('menuProfilePic').src = avatar;
       }
-      if (!amount || amount <= 0) {
-        alert('Monto inválido');
-        return;
-      }
-      showSparkles();
-      setTimeout(() => {
-        alert(`✅ Enviado S/ ${amount} a ${phone}`);
-        addToHistory('mobile-alt', `Enviado a ${phone.slice(-3)}`, `-S/ ${amount}`);
-        balance -= parseFloat(amount);
-        document.getElementById('balanceAmount').textContent = `S/ ${balance.toFixed(2)}`;
-        document.getElementById('phoneNumber').value = '';
-        document.getElementById('sendAmount').value = '';
-        showScreen('home');
-      }, 600);
     }
 
     function saveProfile() {
@@ -570,10 +825,9 @@
         alert('Nombre es obligatorio');
         return;
       }
-      document.querySelector('#profile h2').textContent = name;
-      document.querySelector('#profile p').textContent = nickname;
+      document.getElementById('menuName').textContent = name;
       alert('✅ Perfil actualizado');
-      showScreen('settings');
+      goBack();
     }
 
     function saveBalance() {
@@ -582,47 +836,15 @@
         alert('Ingresa un saldo válido');
         return;
       }
-      const diff = newBalance - balance;
       balance = newBalance;
       document.getElementById('balanceAmount').textContent = `S/ ${balance.toFixed(2)}`;
-      addToHistory('wallet', 'Saldo editado', diff >= 0 ? `+S/ ${diff.toFixed(2)}` : `-S/ ${Math.abs(diff).toFixed(2)}`);
+      document.getElementById('menuBalance').textContent = balance.toFixed(2);
       alert('✅ Saldo actualizado');
-      showScreen('settings');
+      goBack();
     }
 
     function addToHistory(icon, title, amount) {
-      const now = new Date();
-      const time = now.getHours().toString().padStart(2, '0') + ':' + now.getMinutes().toString().padStart(2, '0');
-      movements.push({ icon, title, amount, date: `Hoy, ${time}` });
-      renderMovements();
-    }
-
-    function renderMovements() {
-      const container = document.getElementById('movementsList');
-      container.innerHTML = '';
-      movements.slice().reverse().forEach(m => {
-        const item = document.createElement('div');
-        item.className = 'movement-item';
-        item.innerHTML = `
-          <div class="movement-icon"><i class="fas fa-${m.icon}"></i></div>
-          <div class="movement-info">
-            <div class="movement-title">${m.title}</div>
-            <div class="movement-date">${m.date}</div>
-          </div>
-          <div class="movement-amount">${m.amount}</div>
-        `;
-        container.appendChild(item);
-      });
-    }
-
-    function changePhoto() {
-      const url = prompt('Ingresa URL de foto (o deja vacío para avatar)', '');
-      if (url && url.trim() !== '') {
-        document.getElementById('profilePic').src = url.trim();
-      } else {
-        const name = document.getElementById('editName').value || 'AnthZz Berrocal';
-        document.getElementById('profilePic').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=9c27b0&color=fff`;
-      }
+      // (Opcional: agregar a historial real)
     }
 
     function showSparkles() {
@@ -645,7 +867,6 @@
 
     window.addEventListener('load', () => {
       showScreen('home');
-      renderMovements();
     });
   </script>
 </body>
