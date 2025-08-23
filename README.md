@@ -494,7 +494,7 @@
       padding: 16px;
       box-shadow: var(--shadow);
       font-family: 'Segoe UI', sans-serif;
-      margin-top: 40px; /* espacio para los iconos */
+      margin-top: 40px;
     }
 
     .confirm-title {
@@ -1008,7 +1008,7 @@
       <div class="send-title">¿A quién vas a yapear?</div>
       <input type="tel" id="sendPhone" placeholder="987 654 321" class="send-input">
       <div class="send-title">Nombre del destinatario</div>
-      <input type="text" id="sendName" placeholder="BerMatMods." value="BerMatMods." class="send-input">
+      <input type="text" id="sendName" placeholder="AnthZz Berrocal" value="AnthZz Berrocal" class="send-input">
       <div class="send-title">¿Cuánto?</div>
       <div class="send-amount">S/ <span id="sendAmount">0.00</span></div>
       <input type="number" id="amountInput" placeholder="0.00" class="send-input" oninput="updateAmount(this.value)">
@@ -1032,7 +1032,7 @@
       <div class="confirm-screen">
         <div class="confirm-title">¡Yapeaste!</div>
         <div class="confirm-amount">S/ <span id="confirmAmount">1</span></div>
-        <div class="confirm-name"><span id="confirmName">BerMatMods.</span></div>
+        <div class="confirm-name"><span id="confirmName">AnthZz Berrocal</span></div>
         <div class="confirm-date">
           <i class="fas fa-calendar"></i> <span id="confirmDate">22 ago. 2025</span> | <i class="fas fa-clock"></i> <span id="confirmTime">10:35 p.m.</span>
         </div>
@@ -1079,7 +1079,7 @@
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Apodo</label>
-        <input type="text" id="editNickname" value="𝑩𝒆𝒓𝑴𝒂𝒕-𝑴𝒐𝒅𝒔" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="text" id="editNickname" value="_BerMat_Mods" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Email</label>
@@ -1098,7 +1098,7 @@
       <h2 style="color:var(--yape-purple); margin:20px 0;">Editar Saldo</h2>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Saldo actual (S/)</label>
-        <input type="number" id="editBalanceInput" value="900.00" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="number" id="editBalanceInput" value="27.00" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
       </div>
       <button class="big-button" onclick="saveBalance()">Guardar Saldo</button>
       <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
@@ -1115,7 +1115,7 @@
         <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
         Ver más en GitHub
       </a>
-      <p class="footer-text">𝕭𝖊𝖗𝕸𝖆𝖙-𝕸𝖔𝖉𝖘 𝖙𝖚 𝖕𝖊𝖘𝖆𝖉𝖎𝖑𝖑𝖆</p>
+      <p class="footer-text">Simulación con fines educativos</p>
       <button class="big-button secondary" style="margin-top:20px; width:100%;" onclick="goBack()">
         <i class="fas fa-arrow-left"></i> Volver
       </button>
@@ -1171,7 +1171,7 @@
         document.querySelector('.balance-toggle span:nth-child(1)').textContent = 'Ocultar saldo';
         balanceVisible = false;
       } else {
-        elem.textContent = .
+        elem.textContent = '●●●●●●';
         document.querySelector('.balance-toggle span:nth-child(1)').textContent = 'Mostrar saldo';
         balanceVisible = true;
       }
@@ -1199,7 +1199,7 @@
 
     function showSendScreen() {
       document.getElementById('sendPhone').value = '';
-      document.getElementById('sendName').value = 'Cintia Bernaola B.';
+      document.getElementById('sendName').value = 'AnthZz Berrocal';
       document.getElementById('amountInput').value = '';
       document.getElementById('sendAmount').textContent = '0.00';
       showScreen('sendScreen');
