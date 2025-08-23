@@ -73,7 +73,7 @@
       color: white;
     }
 
-    /* ===== OCULTAR HEADER y MENÚ en recibo ===== */
+    /* ===== OCULTAR HEADER Y MENÚ EN RECIBO ===== */
     #confirmContainer .top-bar,
     #confirmContainer .menu-toggle {
       display: none !important;
@@ -459,7 +459,7 @@
       position: relative;
     }
 
-    /* ✅ ICONOS GLOBALES (✓ y X) - más arriba, fuera del recibo */
+    /* ✅ ICONOS GLOBALES (✓ y X) - más arriba, en el fondo morado */
     .global-icons-top {
       position: absolute;
       top: 15px;
@@ -492,31 +492,14 @@
       cursor: pointer;
     }
 
-    /* ✅ RECIBO CON BOTÓN DE COMPARTIR DENTRO */
+    /* ✅ RECIBO BLANCO - sin bordes, sin sombra, solo contenido */
     .confirm-screen {
       background: var(--white);
       border-radius: 20px;
       padding: 16px;
       box-shadow: var(--shadow);
       font-family: 'Segoe UI', sans-serif;
-      position: relative;
-    }
-
-    .share-inside {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: #f0f0f0;
-      border: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--yape-purple);
-      font-size: 1.2em;
-      cursor: pointer;
+      margin-top: 60px; /* Espacio para los iconos arriba */
     }
 
     .confirm-title {
@@ -1040,9 +1023,9 @@
       </div>
     </div>
 
-    <!-- Contenedor: Recibo + Anuncio -->
+    <!-- Contenido: Recibo + Anuncio -->
     <div id="confirmContainer" class="screen confirm-container">
-      <!-- ✅ Iconos globales más arriba (fuera del recibo) -->
+      <!-- ✅ Iconos globales (✓ y X) - más arriba, en el fondo morado -->
       <div class="global-icons-top">
         <i class="fas fa-check check" onclick="alert('Confirmado')"></i>
         <div class="close" onclick="goBack()">
@@ -1052,11 +1035,6 @@
 
       <!-- Recibo de pago -->
       <div class="confirm-screen">
-        <!-- ✅ Botón de compartir DENTRO del recibo -->
-        <button class="share-inside" onclick="alert('Compartir recibo')">
-          <i class="fas fa-share-alt"></i>
-        </button>
-
         <div class="confirm-title">¡Yapeaste!</div>
         <div class="confirm-amount">S/ <span id="confirmAmount">1</span></div>
         <div class="confirm-name"><span id="confirmName">AnthZz Berrocal</span></div>
