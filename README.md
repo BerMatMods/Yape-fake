@@ -1,15 +1,56 @@
 
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Yape-fake</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Yape-fake" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://bermatmods.github.io/Yape-fake/ " />
+<meta property="og:url" content="https://bermatmods.github.io/Yape-fake/ " />
+<meta property="og:site_name" content="Yape-fake" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Yape-fake" />
+<script type="application/ld+json">
+{"@context":"https://schema.org ","@type":"WebSite","headline":"Yape-fake","name":"Yape-fake","url":"https://bermatmods.github.io/Yape-fake/ "}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/Yape-fake/assets/css/style.css?v=b557cc9b24f0522b162d6e9e88cf1d590aa52862">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/Yape-fake/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://bermatmods.github.io/Yape-fake/ ">Yape-fake</a></h1>
+      
+
+      
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Yape</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css " rel="stylesheet" />
   <style>
     /* ===== VARIABLES GLOBALES ===== */
     :root {
       --yape-green: #00c853;
-      --yape-purple: #7b1fa2;
+      --yape-purple: #6a1b9a;  /* ← CAMBIADO A MÁS OSCURO */
       --yape-blue: #29b6f6;
       --white: #ffffff;
       --text: #333333;
@@ -764,7 +805,7 @@
 
     <div class="menu-sidebar" id="menuSidebar">
       <div class="menu-header">
-        <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&background=7b1fa2&color=fff" alt="Perfil" id="menuProfilePic">
+        <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&amp;background=7b1fa2&amp;color=fff" alt="Perfil" id="menuProfilePic" />
         <h3 id="menuName">AnthZz Berrocal</h3>
         <p>_BerMat_Mods</p>
       </div>
@@ -881,7 +922,7 @@
         <!-- Recargar celular -->
         <div class="service-item" onclick="startScan()">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/9FzMzGFm/Screenshot-20250823-104637.jpg" alt="Recargar celular">
+            <img src="https://i.postimg.cc/9FzMzGFm/Screenshot-20250823-104637.jpg " alt="Recargar celular" />
           </div>
           <div>Recargar celular</div>
         </div>
@@ -889,7 +930,7 @@
         <!-- Yapear servicios -->
         <div class="service-item" onclick="alert('Yapear servicios')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/QCvrFK0C/Screenshot-20250823-104730.jpg" alt="Yapear servicios">
+            <img src="https://i.postimg.cc/QCvrFK0C/Screenshot-20250823-104730.jpg " alt="Yapear servicios" />
           </div>
           <div>Yapear servicios</div>
         </div>
@@ -897,7 +938,7 @@
         <!-- Promos -->
         <div class="service-item" onclick="alert('Promos')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/DwrKzZsf/Screenshot-20250823-104820.jpg" alt="Promos">
+            <img src="https://i.postimg.cc/DwrKzZsf/Screenshot-20250823-104820.jpg " alt="Promos" />
           </div>
           <div>Promos</div>
         </div>
@@ -905,7 +946,7 @@
         <!-- Aprobar compras -->
         <div class="service-item" onclick="alert('Aprobar compras')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/Y9y5PmcR/Screenshot-20250823-104906.jpg" alt="Aprobar compras">
+            <img src="https://i.postimg.cc/Y9y5PmcR/Screenshot-20250823-104906.jpg " alt="Aprobar compras" />
           </div>
           <div>Aprobar compras</div>
         </div>
@@ -913,7 +954,7 @@
         <!-- Créditos -->
         <div class="service-item" onclick="alert('Créditos')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/xTHdK9Hh/Screenshot-20250823-104933.jpg" alt="Créditos">
+            <img src="https://i.postimg.cc/xTHdK9Hh/Screenshot-20250823-104933.jpg " alt="Créditos" />
           </div>
           <div>Créditos</div>
         </div>
@@ -921,7 +962,7 @@
         <!-- Tienda -->
         <div class="service-item" onclick="alert('Tienda')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/pT42FSdP/Screenshot-20250823-105003.jpg" alt="Tienda">
+            <img src="https://i.postimg.cc/pT42FSdP/Screenshot-20250823-105003.jpg " alt="Tienda" />
           </div>
           <div>Tienda</div>
         </div>
@@ -929,7 +970,7 @@
         <!-- Dólares -->
         <div class="service-item" onclick="alert('Dólares')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/jjB9QYy3/Screenshot-20250823-105020.jpg" alt="Dólares">
+            <img src="https://i.postimg.cc/jjB9QYy3/Screenshot-20250823-105020.jpg " alt="Dólares" />
           </div>
           <div>Dólares</div>
         </div>
@@ -937,7 +978,7 @@
         <!-- Remesas -->
         <div class="service-item" onclick="alert('Remesas')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/wvJrw4Vq/Screenshot-20250823-105050.jpg" alt="Remesas">
+            <img src="https://i.postimg.cc/wvJrw4Vq/Screenshot-20250823-105050.jpg " alt="Remesas" />
           </div>
           <div>Remesas</div>
         </div>
@@ -945,7 +986,7 @@
         <!-- SOAT -->
         <div class="service-item" onclick="alert('SOAT')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/RZFbkZRb/Screenshot-20250823-105128.jpg" alt="SOAT">
+            <img src="https://i.postimg.cc/RZFbkZRb/Screenshot-20250823-105128.jpg " alt="SOAT" />
           </div>
           <div>SOAT</div>
         </div>
@@ -953,7 +994,7 @@
         <!-- Viajar en bus -->
         <div class="service-item" onclick="alert('Viajar en bus')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/63sj4LND/Screenshot-20250823-105147.jpg" alt="Viajar en bus">
+            <img src="https://i.postimg.cc/63sj4LND/Screenshot-20250823-105147.jpg " alt="Viajar en bus" />
           </div>
           <div>Viajar en bus</div>
         </div>
@@ -961,7 +1002,7 @@
         <!-- Biométrica -->
         <div class="service-item" onclick="alert('Biométrica')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/qq41jJqw/Screenshot-20250823-105211.jpg" alt="Biométrica">
+            <img src="https://i.postimg.cc/qq41jJqw/Screenshot-20250823-105211.jpg " alt="Biométrica" />
           </div>
           <div>Biométrica</div>
         </div>
@@ -969,7 +1010,7 @@
         <!-- Ver todo -->
         <div class="service-item" onclick="alert('Ver todo')">
           <div class="service-icon">
-            <img src="https://i.postimg.cc/RVPgLzB1/Screenshot-20250823-105316.jpg" alt="Ver todo">
+            <img src="https://i.postimg.cc/RVPgLzB1/Screenshot-20250823-105316.jpg " alt="Ver todo" />
           </div>
           <div>Ver todo</div>
         </div>
@@ -977,7 +1018,7 @@
 
       <!-- Imagen 1: arriba del saldo -->
       <div class="promo-banner-top">
-        <img src="https://i.postimg.cc/85Mf0TWF/1755961504718.jpg" alt="Promoción">
+        <img src="https://i.postimg.cc/85Mf0TWF/1755961504718.jpg " alt="Promoción" />
       </div>
 
       <div class="balance-card">
@@ -1014,12 +1055,12 @@
     <!-- Pantalla: Ingresar número y monto -->
     <div id="sendScreen" class="screen send-screen">
       <div class="send-title">¿A quién vas a yapear?</div>
-      <input type="tel" id="sendPhone" placeholder="987 654 321" class="send-input">
+      <input type="tel" id="sendPhone" placeholder="987 654 321" class="send-input" />
       <div class="send-title">Nombre del destinatario</div>
-      <input type="text" id="sendName" placeholder="AnthZz Berrocal" value="AnthZz Berrocal" class="send-input">
+      <input type="text" id="sendName" placeholder="AnthZz Berrocal" value="AnthZz Berrocal" class="send-input" />
       <div class="send-title">¿Cuánto?</div>
       <div class="send-amount">S/ <span id="sendAmount">0.00</span></div>
-      <input type="number" id="amountInput" placeholder="0.00" class="send-input" oninput="updateAmount(this.value)">
+      <input type="number" id="amountInput" placeholder="0.00" class="send-input" oninput="updateAmount(this.value)" />
       <div class="send-buttons">
         <button class="send-btn cancel" onclick="goBack()">Cancelar</button>
         <button class="send-btn send" onclick="confirmSend()">Yapear</button>
@@ -1075,29 +1116,29 @@
 
       <!-- Imagen 2: anuncio del iPhone -->
       <div class="promo-banner-bottom">
-        <img src="https://i.postimg.cc/FRNhhv8k/1755961471955.jpg" alt="iPhone 16e">
+        <img src="https://i.postimg.cc/FRNhhv8k/1755961471955.jpg " alt="iPhone 16e" />
       </div>
     </div>
 
     <!-- Pantalla: Perfil -->
     <div id="profile" class="screen" style="display:none; padding:20px;">
       <h2 style="color:var(--yape-purple); margin:20px 0;">Editar Perfil</h2>
-      <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&background=7b1fa2&color=fff" alt="Foto" class="profile-pic" id="profilePic" onclick="changePhoto()" style="width:80px; height:80px; border-radius:50%; margin:20px auto; display:block; border:3px solid var(--yape-purple);">
+      <img src="https://ui-avatars.com/api/?name=AnthZz+Berrocal&amp;background=7b1fa2&amp;color=fff" alt="Foto" class="profile-pic" id="profilePic" onclick="changePhoto()" style="width:80px; height:80px; border-radius:50%; margin:20px auto; display:block; border:3px solid var(--yape-purple);" />
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Nombre completo</label>
-        <input type="text" id="editName" value="AnthZz Berrocal" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="text" id="editName" value="AnthZz Berrocal" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;" />
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Apodo</label>
-        <input type="text" id="editNickname" value="_BerMat_Mods" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="text" id="editNickname" value="_BerMat_Mods" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;" />
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Email</label>
-        <input type="email" id="editEmail" value="anthzz@bermatmods.dev" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="email" id="editEmail" value="anthzz@bermatmods.dev" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;" />
       </div>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Teléfono</label>
-        <input type="tel" id="editPhone" value="+51 999 888 777" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="tel" id="editPhone" value="+51 999 888 777" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;" />
       </div>
       <button class="big-button" onclick="saveProfile()">Guardar Cambios</button>
       <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
@@ -1108,7 +1149,7 @@
       <h2 style="color:var(--yape-purple); margin:20px 0;">Editar Saldo</h2>
       <div style="margin:15px 0;">
         <label style="display:block; margin-bottom:8px; color:#333;">Saldo actual (S/)</label>
-        <input type="number" id="editBalanceInput" value="27.00" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;">
+        <input type="number" id="editBalanceInput" value="27.00" style="width:100%; padding:12px; border-radius:8px; border:1px solid #e0e0e0; font-size:1em;" />
       </div>
       <button class="big-button" onclick="saveBalance()">Guardar Saldo</button>
       <button class="big-button secondary" style="margin-top:10px;" onclick="goBack()">← Volver</button>
@@ -1120,9 +1161,9 @@
       <p>Desarrollado por</p>
       <p class="dev-name">AnthZz Berrocal _BerMat_Mods</p>
       <p>Versión más reciente lanzada por BerMatMods</p>
-      <hr style="border:1px solid #e0e0e0; margin:20px 0;">
-      <a href="https://github.com/BerMatMods" target="_blank" class="github-link">
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+      <hr style="border:1px solid #e0e0e0; margin:20px 0;" />
+      <a href=" https://github.com/BerMatMods " target="_blank" class="github-link">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png " alt="GitHub" />
         Ver más en GitHub
       </a>
       <p class="footer-text">Somos legión no olvides,Esperanos</p>
@@ -1323,7 +1364,7 @@
         userProfile.photo = url.trim();
       } else {
         const name = document.getElementById('editName').value || 'AnthZz Berrocal';
-        userProfile.photo = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7b1fa2&color=fff`;
+        userProfile.photo = ` https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=7b1fa2&color=fff`;
       }
       document.getElementById('profilePic').src = userProfile.photo;
       document.getElementById('menuProfilePic').src = userProfile.photo;
